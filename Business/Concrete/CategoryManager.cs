@@ -13,15 +13,18 @@ namespace Business.Concrete
         private readonly IValidator<Category> _validator;
         public IResult Add(CategoryCreateDto dto)
         {
-            Category model = CategoryCreateDto.ToCategory(dto);
-            var validator = _validator.Validate(model);
+            //Category model = CategoryCreateDto.ToCategory(dto);
+            //var validator = _validator.Validate(model);
 
-            string errorMessage = "";
+            //string errorMessage = "";
 
-            foreach (var error in validator.Errors) 
-            {
+            //foreach (var error in validator.Errors) 
+            //{
 
-            }
+            //}
+
+            throw new NotImplementedException();
+
         }
 
         public IDataResult<List<CategoryDto>> GetAll()
