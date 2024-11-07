@@ -1,5 +1,6 @@
 ﻿using Core.Results.Abstract;
 using Entities.Dtos;
+using Entities.TableModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,15 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IFaqDto
+    public interface IFaqService
     {
         IResult Add(FaqCreateDto dto);
         IResult Update(FaqUpdateDto dto);
-        IDataResult<List<FaqDto>> GetAll();
-        IDataResult<FaqDto> GetById(int id);
-        IResult Delete(int id);
+        IDataResult<List<Faq>> GetAll();
+        IDataResult<List<Faq>> GetAllDeleted();
+        IDataResult<Faq> GetById(int id);
+        IResult SoftDelete(int id);
+        IResult HardDelete(int id);
 
     }
 }

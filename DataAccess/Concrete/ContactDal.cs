@@ -1,13 +1,11 @@
-﻿using DataAccess.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.DataAccess.Concrete;
+using DataAccess.Abstract;
+using DataAccess.SqlServerDBContext;
+using Entities.TableModels;
 
 namespace DataAccess.Concrete
 {
-    public class ContactDal  : IContactDal
+    public class ContactDal  :BaseRepository<Contact, ApplicationDbContext> ,IContactDal
     {
     }
 }

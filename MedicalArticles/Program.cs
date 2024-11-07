@@ -1,3 +1,7 @@
+using DataAccess.SqlServerDBContext;
+using Entities.Concrete.TableModels.Membership;
+using Business.Extensions;
+
 namespace MedicalArticles
 {
     public class Program
@@ -8,6 +12,12 @@ namespace MedicalArticles
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<ApplicationDbContext>()
+                .AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            builder.Services.AddBusinessServices();
 
             var app = builder.Build();
 

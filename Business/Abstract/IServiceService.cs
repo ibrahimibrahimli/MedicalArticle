@@ -1,5 +1,6 @@
 ﻿using Core.Results.Abstract;
 using Entities.Dtos;
+using Entities.TableModels;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,10 @@ namespace Business.Abstract
     {
         IResult Add(ServiceCreateDto dto, IFormFile photoUrl, string webRootPath);
         IResult Update(ServiceUpdateDto dto, IFormFile photoUrl, string webRootPath);
-        IDataResult<List<ServiceDto>> GetAll();
-        IDataResult<ServiceDto> Get(int id);
-        IResult Delete(int id); 
+        IDataResult<List<Service>> GetAll();
+        IDataResult<List<Service>> GetAllDeleted();
+        IDataResult<Service> GetById(int id);
+        IResult HardDelete(int id); 
+        IResult SoftDelete(int id); 
     }
 }

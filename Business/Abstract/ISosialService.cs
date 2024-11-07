@@ -1,5 +1,6 @@
 ﻿using Core.Results.Abstract;
 using Entities.Dtos;
+using Entities.TableModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,11 @@ namespace Business.Abstract
     public interface ISosialService
     {
         IResult Add(SosialCreateDto dto);
+        IDataResult<List<Sosial>> GetAll();  
+        IDataResult<List<Sosial>> GetAllDeleted();  
+        IDataResult<Sosial> GetById(int id);
+        IResult HardDelete(int id);
+        IResult SoftDelete(int id);
         IResult Update(SosialUpdateDto dto);
-        IDataResult<List<SosialDto>> GetAll();  
-        IDataResult<SosialDto> GetById(int id);
-        IResult Delete(int id);
     }
 }

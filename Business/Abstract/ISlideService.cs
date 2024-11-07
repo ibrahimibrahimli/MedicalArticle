@@ -1,5 +1,6 @@
 ﻿using Core.Results.Abstract;
 using Entities.Dtos;
+using Entities.TableModels;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,10 @@ namespace Business.Abstract
     {
         IResult Add(SlideCreateDto dto, IFormFile photoUrl, string webRootPath);
         IResult Update(SlideUpdateDto dto, IFormFile photoUrl, string webRootPath);
-        IDataResult<List<SlideDto>> GetAll();
-        IDataResult<SlideDto> Get(int id);
-        IResult Delete(int id);
+        IDataResult<List<Slide>> GetAll();
+        IDataResult<List<Slide>> GetAllDeleted();
+        IDataResult<Slide> GetById(int id);
+        IResult HardDelete(int id);
+        IResult SoftDelete(int id);
     }
 }
