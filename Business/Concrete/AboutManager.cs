@@ -26,16 +26,16 @@ namespace Business.Concrete
         {
             About model = AboutCreateDto.ToAbout(dto);
             var validator = _validator.Validate(model);
-            model.PhotoUrl = PictureHelper.UploadImage(photoUrl, webRootPath);  
+            model.PhotoUrl = PictureHelper.UploadImage(photoUrl, webRootPath);
 
             string errorMessage = "";
 
-            foreach(var error in validator.Errors)
+            foreach (var error in validator.Errors)
             {
                 errorMessage = error.ErrorMessage;
             }
 
-            if(!validator.IsValid)
+            if (!validator.IsValid)
             {
                 return new ErrorResult(errorMessage);
             }
@@ -62,7 +62,7 @@ namespace Business.Concrete
 
         public IResult HardDelete(int id)
         {
-            var data  = GetById(id).Data;
+            var data = GetById(id).Data;
             _aboutDal.Delete(data);
 
             return new SuccessResult(UiMessages.SuccessDeletedMessage(data.Title));
@@ -74,24 +74,25 @@ namespace Business.Concrete
             data.Deleted = id;
             _aboutDal.Update(data);
 
-            return new  SuccessResult(UiMessages.SuccessCopyTrashMessage(data.Title));
+            return new SuccessResult(UiMessages.SuccessCopyTrashMessage(data.Title));
         }
 
         public IResult Update(AboutUpdateDto dto, IFormFile photoUrl, string webRootPath)
         {
             About model = AboutUpdateDto.ToAbout(dto);
             About existData = GetById(model.Id).Data;
-            
-            if(photoUrl is null)
+
+            if (photoUrl is null)
                 model.PhotoUrl = existData.PhotoUrl;
             else
                 model.PhotoUrl = PictureHelper.UploadImage(photoUrl, webRootPath);
 
+   
             model.UpdatedDate = DateTime.Now;
             _aboutDal.Update(model);
 
             return new SuccessResult(UiMessages.SuccessUpdatedMessage(model.Title));
-            
+
         }
     }
 }

@@ -1,0 +1,45 @@
+﻿
+@model List<About>
+
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                @if (ViewBag.ShowButton)
+                {
+                    <form action="About/Create" method="get">
+                        <p>
+                            <button class="btn btn-primary">@DefaultConstantValues.ADD_MESSAGE</button>
+                        </p>
+                    </form>
+                }
+
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Başlıq</th>
+                            <th>Mətn</th>
+                            <th>Şəkil</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@(item.Title.Length > 30 ? item.Title.Substring(0, 30) + "..." : item.Title)</td>
+                                <td>@(item.Description.Length > 30 ? item.Description.Substring(0, 30) + "..." : item.Description)</td>
+                                <td><img src="@item.PhotoUrl" alt="About Photo" width="60px" /></td>
+                                <td class="d-flex justify-content-center">
+                                    <a asp-action="Edit" asp-route-id="@item.Id">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

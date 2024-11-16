@@ -1,0 +1,43 @@
+﻿@model Adress
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label">Ünvan</label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone1" class="control-label">Əlaqə 1</label>
+                <textarea asp-for="Phone1" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="Phone1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone2" class="control-label">Əlaqə 2</label>
+                <textarea asp-for="Phone2" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="Phone2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone3" class="control-label">Əlaqə 3</label>
+                <textarea asp-for="Phone3" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="Phone3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">E-Poçt</label>
+                <textarea asp-for="Email" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="@DefaultConstantValues.ADD_MESSAGE" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@DefaultConstantValues.RETURN_TO_BACK</a>
+</div>

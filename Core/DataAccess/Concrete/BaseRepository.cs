@@ -46,7 +46,7 @@ namespace Core.DataAccess.Concrete
         {
             using (TContext context = new TContext())
             {
-                if(filter != null)
+                if(filter is null)
                     return context.Set<TEntity >().ToList();
                 else
                     return context.Set<TEntity>().Where(filter).ToList();

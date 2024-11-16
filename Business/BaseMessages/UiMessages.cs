@@ -26,6 +26,11 @@ namespace Business.BaseMessages
             return $"{propName} zibil qutusuna köçürüldü";
         }
 
+        public static string SuccessReturnTrashMessage(string propName)
+        {
+            return $"{propName} zibil qutusundan çıxarıldı";
+        }
+
 
         public const string MINIMUM_100_SYMBOL_MESSAGE = "100 simvoldan az daxil edilə bilməz";
         public const string MINIMUM_3_SYMBOL_MESSAGE = "3 simvoldan az daxil edilə bilməz";

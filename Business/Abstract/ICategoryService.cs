@@ -13,5 +13,6 @@ namespace Business.Abstract
         IDataResult<Category> GetById(int id);
         IResult SoftDelete (int id);
         IResult HardDelete (int id);
+        IResult ReturnDeleted (int id);
     }
 }

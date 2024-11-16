@@ -67,9 +67,18 @@ namespace Business.Concrete
             return new SuccessResult(UiMessages.SuccessDeletedMessage(data.Name));
         }
 
+        public IResult ReturnDeleted(int id)
+        {
+            Category data = _categoryDal.GetById(id);
+            data.Deleted = 0;
+            _categoryDal.Update(data);
+
+            return new SuccessResult(UiMessages.SuccessReturnTrashMessage(data.Name));
+        }
+
         public IResult SoftDelete(int id)
         {
-            Category data = (_categoryDal.GetById(id));
+            Category data = _categoryDal.GetById(id);
             data.Deleted = id;
 
             _categoryDal.Update(data);
@@ -83,7 +92,7 @@ namespace Business.Concrete
             Category existData = GetById(model.Id).Data;
 
             model.UpdatedDate = DateTime.Now;
-            _categoryDal.Update(existData);
+            _categoryDal.Update(model);
 
             return new SuccessResult(UiMessages.SuccessUpdatedMessage(model.Name));
         }

@@ -65,6 +65,14 @@ namespace Business.Concrete
 
         }
 
+        public IResult ReturnDeleted(int id)
+        {
+            Contact data = _contactDal.GetById(id);
+            data.Deleted = 0;
+            _contactDal.Update(data);
+            return new SuccessResult(UiMessages.SuccessReturnTrashMessage(data.Name));
+        }
+
         public IResult SoftDelete(int id)
         {
             Contact data = GetById(id).Data;

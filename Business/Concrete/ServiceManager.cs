@@ -8,11 +8,6 @@ using Entities.Dtos;
 using Entities.TableModels;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
@@ -71,6 +66,15 @@ namespace Business.Concrete
             _serviceDal.Delete(model);
 
             return new SuccessResult(UiMessages.SuccessDeletedMessage($"{model.Id} nömrəli servis"));
+        }
+
+        public IResult ReturnDeleted(int id)
+        {
+            Service model = GetById(id).Data;
+            model.Deleted = 0;
+            _serviceDal.Update(model);
+
+            return new SuccessResult(UiMessages.SuccessReturnTrashMessage(model.Title));
         }
 
         public IResult SoftDelete(int id)

@@ -65,6 +65,14 @@ namespace Business.Concrete
             return new SuccessResult(UiMessages.SuccessDeletedMessage($"{data.Id} nömrəli sual"));
         }
 
+        public IResult ReturnDeleted(int id)
+        {
+            Faq model = GetById(id).Data;
+            model.Deleted = 0;
+            _faqDal.Update(model);
+            return new SuccessResult(UiMessages.SuccessReturnTrashMessage($"{model.Id} nömrəli sual"));
+        }
+
         public IResult SoftDelete(int id)
         {
             Faq model = GetById(id).Data;
