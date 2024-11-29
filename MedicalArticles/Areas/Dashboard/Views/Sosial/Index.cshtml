@@ -1,0 +1,99 @@
+﻿@model List<Sosial>
+
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <form action="Sosial/Create" method="get">
+                    <p>
+                        <button class="btn btn-primary">@DefaultConstantValues.ADD_MESSAGE</button>
+                    </p>
+                </form>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Facebook Url</th>
+                            <th>Instagram Url</th>
+                            <th>Telegram</th>
+                            <th>Whatsapp Url</th>
+                            <th>Twitter Url</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.FacebookUrl</td>
+                                <td>@item.InstagramUrl</td>
+                                <td>@item.Telegram</td>
+                                <td>@item.WhatsappUrl</td>
+                                <td>@item.TwitterUrl</td>
+                                <td class="d-flex justify-content-center">
+                                    <a style="margin-right: 20px;" asp-action="Edit" asp-route-id="@item.Id">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                    <a item-value="@item.Id" item-title="@item.Id" class="btnDelete" style="color: green;">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <a asp-action="ReturnFromTrash">
+                <i class="fas fa-trash"></i>
+            </a>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $(".btnDelete").click(function (e) {
+            Swal.fire({
+                title: 'Əminsən?',
+                text: "Zibil qutusuna köçürüləcək",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonText: "Ləğv et",
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Bəli '
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let itemId = e.currentTarget.getAttribute('item-value');
+                    let itemTitle = e.currentTarget.getAttribute('item-title');
+
+                    $.ajax({
+                        method: "POST",
+                        url: "sosial/delete/",
+                        data: {
+                            id: itemId
+                        },
+                        success: function () {
+                            Swal.fire({
+                                title: 'Zibil qutusuna köçürüldü!',
+                                text: "'" + itemTitle + "' silindi",
+                                icon: 'success',
+                            }).then((result) => {
+                                window.location = "sosial";
+                            });
+                        },
+                        error: function () {
+                            Swal.fire({
+                                title: 'Xəta!',
+                                text: "Silinmə zamanı xəta baş verdi",
+                                icon: 'error',
+                            });
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+}
+
+
+

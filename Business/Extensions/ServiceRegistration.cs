@@ -7,11 +7,6 @@ using Entities.Concrete.TableModels.Membership;
 using Entities.TableModels;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Extensions
 {
@@ -39,10 +34,26 @@ namespace Business.Extensions
             services.AddScoped<IFaqDal, FaqDal>();
             services.AddScoped<IFaqService, FaqManager>();
             services.AddScoped<IValidator<Faq>, FaqValidation>();
+            
+            services.AddScoped<IHealtTipDal, HealtTipDal>();
+            services.AddScoped<IHealtTipService, HealtTipManager>();
+            services.AddScoped<IValidator<HealtTip>, HealtTipValidation>();
+
+            services.AddScoped<IHealtTipItemsDal, HealtTipItemsDal>();
+            services.AddScoped<IHealtTipItemsService, HealtTipItemsManager>();
+            services.AddScoped<IValidator<HealtTipItems>, HealtTipItemsValidation>();
 
             services.AddScoped<IServiceDal, ServiceDal>();
             services.AddScoped<IServiceService, ServiceManager>();
             services.AddScoped<IValidator<Service>, ServiceValidation>();
+
+            services.AddScoped<IServiceAboutDal, ServiceAboutDal>();
+            services.AddScoped<IServiceAboutService, ServiceAboutManager>();
+            services.AddScoped<IValidator<ServiceAbout>, ServiceAboutValidation>();
+
+            services.AddScoped<IServiceAboutItemsDal, ServiceAboutItemsDal>();
+            services.AddScoped<IServiceAboutItemsService, ServiceAboutItemsManager>();
+            services.AddScoped<IValidator<ServiceAboutItems>, ServiceAboutItemsValidation>();
 
             services.AddScoped<ISlideDal, SlideDal>();
             services.AddScoped<ISlideService, SlideManager>();
@@ -51,6 +62,18 @@ namespace Business.Extensions
             services.AddScoped<ISosialDal, SosialDal>();
             services.AddScoped<ISosialService, SosialManager>();
             services.AddScoped<IValidator<Sosial>, SosialValidation>();
+
+            services.AddScoped<ITeamBoardDal, TeamBoardDal>();
+            services.AddScoped<ITeamBoardService, TeamBoardManager>();
+            services.AddScoped<IValidator<TeamBoard>, TeamBoardValidation>();
+
+            services.AddScoped<IWhyChooseUsDal, WhyChooseUsDal>();
+            services.AddScoped<IWhyChooseUsService, WhyChooseUsManager>();
+            services.AddScoped<IValidator<WhyChooseUs>, WhyChooseUsValidation>();
+
+            services.AddScoped<IWhyChooseUsItemsDal, WhyChooseUsItemsDal>();
+            services.AddScoped<IWhyChooseUsItemsService, WhyChooseUsItemsManager>();
+            services.AddScoped<IValidator<WhyChooseUsItems>, WhyChooseUsItemsValidation>();
 
             services.AddScoped<IValidator<ApplicationUser>, ApplicationUserValidation>();
             return services;

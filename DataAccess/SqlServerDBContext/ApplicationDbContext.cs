@@ -26,9 +26,16 @@ namespace DataAccess.SqlServerDBContext
         public DbSet<Adress> Adresses { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Faq> Faqs { get; set; }
+        public DbSet<HealtTip> HealtTips { get; set; }
+        public DbSet<HealtTipItems> HealtTipsItems { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<ServiceAbout> ServiceAbouts { get; set; }
+        public DbSet<ServiceAboutItems> ServiceAboutItems { get; set; }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Sosial> Sosials { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<TeamBoard> TeamBoards { get; set; }
+        public DbSet<WhyChooseUs> whyChooseUs { get; set; }
+        public DbSet<WhyChooseUsItems> whyChooseUsItems { get; set; }
     }
 }

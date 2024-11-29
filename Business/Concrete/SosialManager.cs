@@ -65,6 +65,15 @@ namespace Business.Concrete
             return new SuccessResult(UiMessages.SuccessDeletedMessage($"{model.Id} nömrəli əlaqə"));
         }
 
+        public IResult ReturnDeleted(int id)
+        {
+            Sosial model = GetById(id).Data;
+            model.Deleted = 0;
+            _sosialDal.Update(model);
+
+            return new SuccessResult(UiMessages.SuccessReturnTrashMessage($"{model.Id} nömrəli əlaqə"));
+        }
+
         public IResult SoftDelete(int id)
         {
             Sosial model = GetById(id).Data;

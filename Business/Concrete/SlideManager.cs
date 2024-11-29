@@ -68,6 +68,14 @@ namespace Business.Concrete
             return new SuccessResult(UiMessages.SuccessDeletedMessage(model.Title));
         }
 
+        public IResult ReturnDeleted(int id)
+        {
+            Slide model = GetById(id).Data;
+            model.Deleted = 0;
+            _slideDal.Update(model);
+            return new SuccessResult(UiMessages.SuccessReturnTrashMessage(model.Title));
+        }
+
         public IResult SoftDelete(int id)
         {
             Slide model = GetById(id).Data;

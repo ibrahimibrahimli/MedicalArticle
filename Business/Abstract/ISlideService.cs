@@ -2,11 +2,6 @@
 using Entities.Dtos;
 using Entities.TableModels;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
@@ -19,5 +14,6 @@ namespace Business.Abstract
         IDataResult<Slide> GetById(int id);
         IResult HardDelete(int id);
         IResult SoftDelete(int id);
+        IResult ReturnDeleted(int id);
     }
 }

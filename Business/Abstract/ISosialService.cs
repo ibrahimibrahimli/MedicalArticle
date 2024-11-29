@@ -18,5 +18,6 @@ namespace Business.Abstract
         IResult HardDelete(int id);
         IResult SoftDelete(int id);
         IResult Update(SosialUpdateDto dto);
+        IResult ReturnDeleted(int id);
     }
 }
