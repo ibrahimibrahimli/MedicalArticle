@@ -1,4 +1,4 @@
-﻿@model HealtTipItems
+﻿@model ServiceAboutItems
 
 <hr />
 <div class="row">
@@ -6,11 +6,11 @@
         <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="HealtTipId" class="control-label">Kateqoriya</label>
-                <select asp-for="HealtTipId" class="form-control">
-                    @foreach (var item in ViewData["HealtTips"] as IEnumerable<HealtTip>)
+                <label asp-for="ServiceAboutId" class="control-label">Kateqoriya</label>
+                <select asp-for="ServiceAboutId" class="form-control">
+                    @foreach (var item in ViewData["ServiceAbout"] as IEnumerable<ServiceAbout>)
                     {
-                        <option value="@item.Id">@item.Header</option>
+                        <option value="@item.Id">@item.Title</option>
                     }
                 </select>
             </div>
