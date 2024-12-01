@@ -14,5 +14,6 @@ namespace Business.Abstract
         IDataResult<List<ServiceAbout>> GetAll();
         IDataResult<List<ServiceAbout>> GetAllDeleted();
         IDataResult<ServiceAbout> GetById(int id);
+        IResult ReturnDeleted (int id);
     }
 }

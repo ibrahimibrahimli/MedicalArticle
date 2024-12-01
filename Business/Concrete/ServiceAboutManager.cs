@@ -69,6 +69,15 @@ namespace Business.Concrete
             return new SuccessResult(UiMessages.SuccessDeletedMessage(data.Title));
         }
 
+        public IResult ReturnDeleted(int id)
+        {
+            var data = GetById(id).Data;
+            data.Deleted = 0;
+            _serviceAboutDal.Update(data);
+
+            return new SuccessResult(UiMessages.SuccessReturnTrashMessage(data.Title));
+        }
+
         public IResult SoftDelete(int id)
         {
             var data = GetById(id).Data;
