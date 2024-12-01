@@ -1,0 +1,62 @@
+﻿@model TeamBoardCreateDto
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Ad</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label">Soyad</label>
+                <textarea asp-for="Surname" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Profession" class="control-label">İxtisas</label>
+                <textarea asp-for="Profession" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="Profession" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FacebookUrl" class="control-label">Facebook Url</label>
+                <textarea asp-for="FacebookUrl" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="FacebookUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LinkedinUrl" class="control-label">Linkedin Url</label>
+                <textarea asp-for="LinkedinUrl" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="LinkedinUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="InstagramUrl" class="control-label">İnstagram Url</label>
+                <textarea asp-for="InstagramUrl" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="InstagramUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group d-flex align-items-center">
+                <span style="margin-right:1rem;">Ana Səhifə?</span>
+                <input asp-for="IsHomePage" class="form-control" id="answer" type="checkbox" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhotoUrl" class="control-label">Şəkil</label>
+                <input asp-for="PhotoUrl" name="PhotoUrl" class="form-control" type="file" />
+                <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@DefaultConstantValues.ADD_MESSAGE" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@DefaultConstantValues.RETURN_TO_BACK</a>
+</div>

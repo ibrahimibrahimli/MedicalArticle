@@ -1,0 +1,53 @@
+[33mcommit ffa0e9396330a060cdfbc0b8f696d1d37cfc67aa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: ibrahimibrahimli <dev.ibrahimlii@gmail.com>
+Date:   Fri Nov 29 15:52:13 2024 +0100
+
+    TeamBoardController Added
+
+[33mcommit 74298e75bbcaad15f809bb226c9e338004a253c0[m
+Author: İbrahim İbrahimli <dev.ibrahimlii@hotmail.com>
+Date:   Fri Nov 29 15:35:01 2024 +0100
+
+    Same Entities Added
+
+[33mcommit 734129fca2abbce7bcc7072f74491887bd03b81f[m
+Author: İbrahim İbrahimli <dev.ibrahimlii@hotmail.com>
+Date:   Sat Nov 16 21:48:51 2024 +0100
+
+    SlideController  created
+
+[33mcommit c6d2bb05ae2341dc6c745b2302ced593d70ad523[m
+Author: İbrahim İbrahimli <dev.ibrahimlii@hotmail.com>
+Date:   Sat Nov 16 21:45:03 2024 +0100
+
+    Same Controller Added
+
+[33mcommit 0f4ffe3b203444a64228df2d284a15d4db1a2650[m
+Author: İbrahim İbrahimli <dev.ibrahimlii@hotmail.com>
+Date:   Thu Nov 7 21:47:20 2024 +0100
+
+    Business Layer updated
+
+[33mcommit 0789e313f9c69094f9e85a6b75c791274e7f3714[m
+Author: İbrahim İbrahimli <dev.ibrahimlii@hotmail.com>
+Date:   Fri Oct 4 11:10:41 2024 +0200
+
+    All layers updated
+
+[33mcommit 5897d50d88c2071866bbba01373b60638f181785[m
+Author: İbrahim İbrahimli <dev.ibrahimlii@hotmail.com>
+Date:   Fri Oct 4 10:53:24 2024 +0200
+
+    Data access and Business layer added
+
+[33mcommit 90ce2220283b206a455bc03b14f786163ffbb0e9[m
+Author: İbrahim İbrahimli <dev.ibrahimlii@hotmail.com>
+Date:   Fri Oct 4 10:50:27 2024 +0200
+
+    Core Layer Added
+
+[33mcommit d63a95ec21f9708f9566ce64fd79cfc4f8fa095e[m
+Author: İbrahim İbrahimli <dev.ibrahimlii@hotmail.com>
+Date:   Fri Oct 4 10:42:06 2024 +0200
+
+    Project Initialized

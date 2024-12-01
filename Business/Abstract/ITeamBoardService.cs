@@ -14,5 +14,6 @@ namespace Business.Abstract
         IDataResult<List<TeamBoard>> GetAll();
         IDataResult<List<TeamBoard>> GetAllDeleted();
         IDataResult<TeamBoard> GetById(int id);
+        IResult ReturnDeleted(int id);
     }
 }

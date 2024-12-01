@@ -11,6 +11,7 @@ namespace Entities.Dtos
         public string FacebookUrl { get; set; }
         public string LinkedinUrl { get; set; }
         public string InstagramUrl { get; set; }
+        public bool IsHomePage { get; set; }
 
         public static TeamBoard ToTeamBoard(TeamBoardCreateDto dto)
         {
@@ -23,6 +24,7 @@ namespace Entities.Dtos
                 FacebookUrl = dto.FacebookUrl,
                 LinkedinUrl = dto.LinkedinUrl,
                 InstagramUrl = dto.InstagramUrl,
+                IsHomePage = dto.IsHomePage,
             };
             return teamBoard;
         }
