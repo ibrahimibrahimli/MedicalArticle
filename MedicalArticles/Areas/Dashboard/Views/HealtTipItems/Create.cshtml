@@ -1,0 +1,32 @@
+﻿@model HealtTipItemsCreateDto
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HealtTipId" class="control-label">Kateqoriya</label>
+                <select asp-for="HealtTipId" class="form-control">
+                    @foreach (var item in ViewData["HealtTips"] as IEnumerable<HealtTip>)
+                    {
+                        <option value="@item.Id">@item.Header</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label">Mətn</label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="@DefaultConstantValues.ADD_MESSAGE" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@DefaultConstantValues.RETURN_TO_BACK</a>
+</div>

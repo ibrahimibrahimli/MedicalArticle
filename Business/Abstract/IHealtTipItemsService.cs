@@ -14,5 +14,6 @@ namespace Business.Abstract
         IDataResult<List<HealtTipItems>> GetAll();
         IDataResult<List<HealtTipItems>> GetAllDeleted();
         IDataResult<HealtTipItems> GetById(int id);
+        IResult ReturnDeleted (int id); 
     }
 }
