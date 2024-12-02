@@ -51,6 +51,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<HealtTipItems>>(_healtTipItemsDal.GetAll(x => x.Deleted != 0));
         }
 
+        public IDataResult<List<HealtTipItemsDto>> GetHealtTipItemsWithHealtTip()
+        {
+            return new SuccessDataResult<List<HealtTipItemsDto>>(_healtTipItemsDal.GetHealtTipItemsWithHealtTip());
+        }
+
         public IDataResult<HealtTipItems> GetById(int id)
         {
             return new SuccessDataResult<HealtTipItems>(_healtTipItemsDal.GetById(id));

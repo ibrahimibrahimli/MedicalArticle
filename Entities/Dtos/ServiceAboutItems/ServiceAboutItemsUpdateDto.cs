@@ -8,9 +8,9 @@ namespace Entities.Dtos
         public int ServiceAboutId { get; set; }
         public string Text { get; set; }
 
-        public static ServiceAboutItems ToServiceAboutItems(ServiceAboutItemsUpdateDto dto)
+        public static ServiceAboutItemDto ToServiceAboutItems(ServiceAboutItemsUpdateDto dto)
         {
-            ServiceAboutItems serviceAboutItems = new ServiceAboutItems()
+            ServiceAboutItemDto serviceAboutItems = new ServiceAboutItemDto()
             {
                 Id = dto.Id,
                 Text = dto.Text,

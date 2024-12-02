@@ -1,32 +1,49 @@
-using MedicalArticles.Models;
+﻿using Business.Abstract;
+using MedicalArticles.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace MedicalArticles.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ISlideService _slideService;
+        private readonly IServiceAboutItemsService _aboutItemsService;
+        private readonly IServiceService _serviceService;
+        private readonly IHealtTipItemsService _healtTipItemsService;
+        private readonly ITeamBoardService _teamBoardService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ISlideService slideService, IServiceAboutItemsService aboutItemsService, IServiceService serviceService, IHealtTipItemsService healtTipItemsService, ITeamBoardService teamBoardService)
         {
-            _logger = logger;
+            _slideService = slideService;
+            _aboutItemsService = aboutItemsService;
+            _serviceService = serviceService;
+            _healtTipItemsService = healtTipItemsService;
+            _teamBoardService = teamBoardService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var slideData = _slideService.GetAll().Data;
+            var aboutData = _aboutItemsService.GetServiceAboutItemsWidthServiceAbout().Data;
+            var serviceData = _serviceService.GetServicesWithCategory().Data;
+            var healtTipData = _healtTipItemsService.GetHealtTipItemsWithHealtTip().Data;
+            var teamboardData = _teamBoardService.GetAll().Data;
+
+            HomeViewModel viewModel = new HomeViewModel()
+            {
+                Slides = slideData,
+                ServiceAboutItems = aboutData,
+                Services = serviceData,
+                HealtTipItems = healtTipData,
+                Teamboard = teamboardData
+            };
+
+            return View(viewModel);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View("Error");
         }
     }
 }

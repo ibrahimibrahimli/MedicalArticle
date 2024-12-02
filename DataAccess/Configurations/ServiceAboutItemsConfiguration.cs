@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DataAccess.Configurations
 {
-    public class ServiceAboutItemsConfiguration : IEntityTypeConfiguration<ServiceAboutItems>
+    public class ServiceAboutItemsConfiguration : IEntityTypeConfiguration<ServiceAboutItemDto>
     {
-        public void Configure(EntityTypeBuilder<ServiceAboutItems> builder)
+        public void Configure(EntityTypeBuilder<ServiceAboutItemDto> builder)
         {
             builder.ToTable("ServiceAboutItems");
 

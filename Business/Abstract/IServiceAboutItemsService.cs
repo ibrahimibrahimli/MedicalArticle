@@ -11,9 +11,10 @@ namespace Business.Abstract
         IResult Update(ServiceAboutItemsUpdateDto dto);
         IResult SoftDelete(int id);
         IResult HardDelete(int id);
-        IDataResult<List<ServiceAboutItems>> GetAll();
-        IDataResult<List<ServiceAboutItems>> GetAllDeleted();
-        IDataResult<ServiceAboutItems> GetById(int id);
+        IDataResult<List<ServiceAboutItemDto>> GetAll();
+        IDataResult<List<ServiceAboutItemDto>> GetAllDeleted();
+        IDataResult<ServiceAboutItemDto> GetById(int id);
         IResult ReturnDeleted(int id);
+        IDataResult<List<ServiceAboutItemsDto>> GetServiceAboutItemsWidthServiceAbout();
     }
 }

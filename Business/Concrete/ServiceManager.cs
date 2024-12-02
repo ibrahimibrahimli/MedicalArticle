@@ -60,6 +60,11 @@ namespace Business.Concrete
             return new SuccessDataResult<Service>(_serviceDal.GetById(id));
         }
 
+        public IDataResult<List<ServiceDto>> GetServicesWithCategory()
+        {
+            return new SuccessDataResult<List<ServiceDto>>(_serviceDal.GetServicesWithCategory());
+        }
+
         public IResult HardDelete(int id)
         {
             var model = GetById(id).Data;

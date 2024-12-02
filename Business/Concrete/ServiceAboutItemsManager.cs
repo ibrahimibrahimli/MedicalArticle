@@ -12,9 +12,9 @@ namespace Business.Concrete
     public class ServiceAboutItemsManager : IServiceAboutItemsService
     {
         private readonly IServiceAboutItemsDal _serviceAboutItemsDal;
-        private readonly IValidator<ServiceAboutItems> _validator;
+        private readonly IValidator<ServiceAboutItemDto> _validator;
 
-        public ServiceAboutItemsManager(IValidator<ServiceAboutItems> validator, IServiceAboutItemsDal serviceAboutItemsDal)
+        public ServiceAboutItemsManager(IValidator<ServiceAboutItemDto> validator, IServiceAboutItemsDal serviceAboutItemsDal)
         {
             _validator = validator;
             _serviceAboutItemsDal = serviceAboutItemsDal;
@@ -22,7 +22,7 @@ namespace Business.Concrete
 
         public IResult Add(ServiceAboutItemsCreateDto dto)
         {
-            ServiceAboutItems model = ServiceAboutItemsCreateDto.ToServiceAboutItems(dto);
+            ServiceAboutItemDto model = ServiceAboutItemsCreateDto.ToServiceAboutItems(dto);
             var validator = _validator.Validate(model);
 
             string errorMessage = "";
@@ -40,24 +40,29 @@ namespace Business.Concrete
             return new SuccessResult(UiMessages.SuccessAddedMessage(model.Text));
         }
 
-        public IDataResult<List<ServiceAboutItems>> GetAll()
+        public IDataResult<List<ServiceAboutItemDto>> GetAll()
         {
-            return new SuccessDataResult<List<ServiceAboutItems>>(_serviceAboutItemsDal.GetAll(x => x.Deleted == 0));
+            return new SuccessDataResult<List<ServiceAboutItemDto>>(_serviceAboutItemsDal.GetAll(x => x.Deleted == 0));
         }
 
-        public IDataResult<List<ServiceAboutItems>> GetAllDeleted()
+        public IDataResult<List<ServiceAboutItemDto>> GetAllDeleted()
         {
-            return new SuccessDataResult<List<ServiceAboutItems>>(_serviceAboutItemsDal.GetAll(x => x.Deleted != 0));
+            return new SuccessDataResult<List<ServiceAboutItemDto>>(_serviceAboutItemsDal.GetAll(x => x.Deleted != 0));
         }
 
-        public IDataResult<ServiceAboutItems> GetById(int id)
+        public IDataResult<ServiceAboutItemDto> GetById(int id)
         {
-            return new SuccessDataResult<ServiceAboutItems>(_serviceAboutItemsDal.GetById(id));
+            return new SuccessDataResult<ServiceAboutItemDto>(_serviceAboutItemsDal.GetById(id));
+        }
+
+        public IDataResult<List<ServiceAboutItemsDto>> GetServiceAboutItemsWidthServiceAbout()
+        {
+            return new SuccessDataResult<List<ServiceAboutItemsDto>>(_serviceAboutItemsDal.GetServiceAboutItemsWidthServiceAbout());
         }
 
         public IResult HardDelete(int id)
         {
-            ServiceAboutItems model = _serviceAboutItemsDal.GetById(id);
+            ServiceAboutItemDto model = _serviceAboutItemsDal.GetById(id);
             _serviceAboutItemsDal.Delete(model);
 
             return new SuccessResult(UiMessages.SuccessDeletedMessage(model.Text));
@@ -74,7 +79,7 @@ namespace Business.Concrete
 
         public IResult SoftDelete(int id)
         {
-            ServiceAboutItems model = _serviceAboutItemsDal.GetById(id);
+            ServiceAboutItemDto model = _serviceAboutItemsDal.GetById(id);
             model.Deleted = id;
             _serviceAboutItemsDal.Update(model);
 
@@ -83,8 +88,8 @@ namespace Business.Concrete
 
         public IResult Update(ServiceAboutItemsUpdateDto dto)
         {
-            ServiceAboutItems model = ServiceAboutItemsUpdateDto.ToServiceAboutItems(dto);
-            ServiceAboutItems existData = GetById(model.Id).Data;
+            ServiceAboutItemDto model = ServiceAboutItemsUpdateDto.ToServiceAboutItems(dto);
+            ServiceAboutItemDto existData = GetById(model.Id).Data;
 
             model.UpdatedDate = DateTime.Now;
             _serviceAboutItemsDal.Update(model);

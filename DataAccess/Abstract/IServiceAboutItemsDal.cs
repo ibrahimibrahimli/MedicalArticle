@@ -4,7 +4,7 @@ using Entities.TableModels;
 
 namespace DataAccess.Abstract
 {
-    public interface IServiceAboutItemsDal : IBaseRepository<ServiceAboutItems>
+    public interface IServiceAboutItemsDal : IBaseRepository<ServiceAboutItemDto>
     {
         List<ServiceAboutItemsDto> GetServiceAboutItemsWidthServiceAbout();
     }

@@ -53,7 +53,7 @@ namespace Business.Extensions
 
             services.AddScoped<IServiceAboutItemsDal, ServiceAboutItemsDal>();
             services.AddScoped<IServiceAboutItemsService, ServiceAboutItemsManager>();
-            services.AddScoped<IValidator<ServiceAboutItems>, ServiceAboutItemsValidation>();
+            services.AddScoped<IValidator<ServiceAboutItemDto>, ServiceAboutItemsValidation>();
 
             services.AddScoped<ISlideDal, SlideDal>();
             services.AddScoped<ISlideService, SlideManager>();

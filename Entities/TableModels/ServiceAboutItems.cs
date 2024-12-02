@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.TableModels
 {
-    public class ServiceAboutItems : BaseEntity
+    public class ServiceAboutItemDto : BaseEntity
     {
         public int ServiceAboutId { get; set; }
         public string Text { get; set; }

@@ -6,7 +6,7 @@ using Entities.TableModels;
 
 namespace DataAccess.Concrete
 {
-    public class ServiceAboutItemsDal : BaseRepository<ServiceAboutItems, ApplicationDbContext>, IServiceAboutItemsDal
+    public class ServiceAboutItemsDal : BaseRepository<ServiceAboutItemDto, ApplicationDbContext>, IServiceAboutItemsDal
     {
         private readonly ApplicationDbContext? _context;
 

@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Business.Validations
 {
-    public class ServiceAboutItemsValidation : AbstractValidator<ServiceAboutItems>
+    public class ServiceAboutItemsValidation : AbstractValidator<ServiceAboutItemDto>
     {
         public ServiceAboutItemsValidation()
         {
