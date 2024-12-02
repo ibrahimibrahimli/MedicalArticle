@@ -2,9 +2,7 @@
 using DataAccess.Abstract;
 using DataAccess.SqlServerDBContext;
 using Entities.Dtos;
-using Entities.TableModels;
-using Microsoft.Extensions.DependencyInjection;
-
+using Entities.TableModels; 
 namespace DataAccess.Concrete
 {
     public class ServiceDal : BaseRepository<Service, ApplicationDbContext>, IServiceDal
