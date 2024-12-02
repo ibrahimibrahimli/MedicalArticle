@@ -64,6 +64,15 @@ namespace Business.Concrete
             return new SuccessResult(UiMessages.SuccessDeletedMessage($"{model.Id}"));
         }
 
+        public IResult ReturnDeleted(int id)
+        {
+            WhyChooseUsItems data = GetById(id).Data;
+            data.Deleted = 0;
+            _whyChooseUsItemsDal.Update(data);
+
+            return new SuccessResult(UiMessages.SuccessReturnTrashMessage(data.Title)); 
+        }
+
         public IResult SoftDelete(int id)
         {
             WhyChooseUsItems model = _whyChooseUsItemsDal.GetById(id);
