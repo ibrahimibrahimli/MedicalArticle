@@ -14,8 +14,8 @@ namespace Business.Validations
         public SlideValidation()
         {
             RuleFor(x => x.Content)
-               .MinimumLength(100)
-               .WithMessage(UiMessages.MINIMUM_100_SYMBOL_MESSAGE)
+               .MinimumLength(3)
+               .WithMessage(UiMessages.MINIMUM_3_SYMBOL_MESSAGE)
                .MaximumLength(3000)
                .WithMessage(UiMessages.MAXIMUM_3000_SYMBOL_MESSAGE)
                .NotEmpty()
