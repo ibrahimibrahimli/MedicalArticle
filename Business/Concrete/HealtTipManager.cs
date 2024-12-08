@@ -61,6 +61,11 @@ namespace Business.Concrete
             return new SuccessDataResult<HealtTip>(_healtTipDal.GetById(id));
         }
 
+        public IDataResult<List<HealtTipDto>> GetHealtTipsWithItems()
+        {
+            return new SuccessDataResult<List<HealtTipDto>>(_healtTipDal.GetHealtTipsWithItems());
+        }
+
         public IResult HardDelete(int id)
         {
             var data = GetById(id).Data;

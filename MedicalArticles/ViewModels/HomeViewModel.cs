@@ -6,9 +6,9 @@ namespace MedicalArticles.ViewModels
     public class HomeViewModel
     {
         public List<Slide> Slides { get; set; }
-        public List<ServiceAboutItemsDto> ServiceAboutItems { get; set; }
+        public List<ServiceAboutDto> ServiceAbout { get; set; }
         public List<ServiceDto> Services { get; set; }
-        public List<HealtTipItemsDto> HealtTipItems { get; set; }
+        public List<HealtTipDto> HealtTip{ get; set; }
         public List<TeamBoard> Teamboard { get; set; }
     }
 }

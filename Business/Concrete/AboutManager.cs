@@ -81,15 +81,19 @@ namespace Business.Concrete
         {
             About model = AboutUpdateDto.ToAbout(dto);
             About existData = GetById(model.Id).Data;
-
+            var validator = _validator.Validate(model);
+            
             if (photoUrl is null)
                 model.PhotoUrl = existData.PhotoUrl;
             else
                 model.PhotoUrl = PictureHelper.UploadImage(photoUrl, webRootPath);
+            if (validator.IsValid)
+            {
+                model.UpdatedDate = DateTime.Now;
+                _aboutDal.Update(model);
+            }
 
-   
-            model.UpdatedDate = DateTime.Now;
-            _aboutDal.Update(model);
+            
 
             return new SuccessResult(UiMessages.SuccessUpdatedMessage(model.Title));
 

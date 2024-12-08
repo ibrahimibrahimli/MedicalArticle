@@ -61,6 +61,11 @@ namespace Business.Concrete
             return new SuccessDataResult<ServiceAbout>(_serviceAboutDal.GetById(id));
         }
 
+        public IDataResult<List<ServiceAboutDto>> GetServiceAboutWithItems()
+        {
+            return new SuccessDataResult<List<ServiceAboutDto>>(_serviceAboutDal.GetServiceAboutWithItems());
+        }
+
         public IResult HardDelete(int id)
         {
             var data = GetById(id).Data;

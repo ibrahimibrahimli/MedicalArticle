@@ -19,7 +19,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         public IActionResult Index()
         {
             var data = _healtTipService.GetAll().Data;
-            ViewBag.ShowButton = data.Count == 0;
+           // ViewBag.ShowButton = data.Count == 0;
             return View(data);
         }
 
