@@ -10,10 +10,12 @@ namespace Entities.TableModels
     public class Blog : BaseEntity  
     {
         public int TeamboardId { get; set; }
+        public int LanguageId { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
         public string PhotoUrl { get; set; }
         public bool IsHomePage { get; set; }
         public virtual TeamBoard TeamBoard { get; set; }
+        public virtual TeamBoard Language { get; set; }
     }
 }

@@ -39,5 +39,6 @@ namespace DataAccess.SqlServerDBContext
         public DbSet<TeamBoard> TeamBoards { get; set; }
         public DbSet<WhyChooseUs> whyChooseUs { get; set; }
         public DbSet<WhyChooseUsItems> whyChooseUsItems { get; set; }
+        public DbSet<Language> Languages { get; set; }
     }
 }
