@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241130211428_mig_4")]
-    partial class mig_4
+    [Migration("20241211162321_mig_1_Modela_added")]
+    partial class mig_1_Modela_added
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -320,6 +320,51 @@ namespace DataAccess.Migrations
                     b.ToTable("Adresses", (string)null);
                 });
 
+            modelBuilder.Entity("Entities.TableModels.Blog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 10000L);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Deleted")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PhotoUrl")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("TeamboardId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasMaxLength(5000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamboardId");
+
+                    b.ToTable("Blogs", (string)null);
+                });
+
             modelBuilder.Entity("Entities.TableModels.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -395,6 +440,41 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("Entities.TableModels.Fact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Counter")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Deleted")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IconUrl")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Facts", (string)null);
                 });
 
             modelBuilder.Entity("Entities.TableModels.Faq", b =>
@@ -517,6 +597,38 @@ namespace DataAccess.Migrations
                     b.ToTable("HealtTipItems", (string)null);
                 });
 
+            modelBuilder.Entity("Entities.TableModels.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 10000L);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Deleted")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages", (string)null);
+                });
+
             modelBuilder.Entity("Entities.TableModels.Service", b =>
                 {
                     b.Property<int>("Id")
@@ -594,7 +706,7 @@ namespace DataAccess.Migrations
                     b.ToTable("ServiceAbouts", (string)null);
                 });
 
-            modelBuilder.Entity("Entities.TableModels.ServiceAboutItems", b =>
+            modelBuilder.Entity("Entities.TableModels.ServiceAboutItemDto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -888,6 +1000,17 @@ namespace DataAccess.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Entities.TableModels.Blog", b =>
+                {
+                    b.HasOne("Entities.TableModels.TeamBoard", "TeamBoard")
+                        .WithMany()
+                        .HasForeignKey("TeamboardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TeamBoard");
+                });
+
             modelBuilder.Entity("Entities.TableModels.HealtTipItems", b =>
                 {
                     b.HasOne("Entities.TableModels.HealtTip", "HealtTip")
@@ -910,7 +1033,7 @@ namespace DataAccess.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Entities.TableModels.ServiceAboutItems", b =>
+            modelBuilder.Entity("Entities.TableModels.ServiceAboutItemDto", b =>
                 {
                     b.HasOne("Entities.TableModels.ServiceAbout", "ServiceAbout")
                         .WithMany("ServiceAboutItems")

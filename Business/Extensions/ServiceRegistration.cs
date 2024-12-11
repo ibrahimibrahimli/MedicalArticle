@@ -83,6 +83,9 @@ namespace Business.Extensions
             services.AddScoped<IWhyChooseUsItemsService, WhyChooseUsItemsManager>();
             services.AddScoped<IValidator<WhyChooseUsItems>, WhyChooseUsItemsValidation>();
 
+            services.AddScoped<ILanguageDal, LanguageDal>();
+            services.AddScoped<ILanguageService, LanguageManager>();
+
             services.AddScoped<IValidator<ApplicationUser>, ApplicationUserValidation>();
             return services;
         }
