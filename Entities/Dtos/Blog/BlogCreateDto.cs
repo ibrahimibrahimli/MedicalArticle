@@ -12,6 +12,7 @@ namespace Entities.Dtos
         public string PhotoUrl { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
+        public bool IsHomePage { get; set; }
         public int TeamboardId { get; set; }
 
         public static Blog ToBlog(BlogCreateDto dto)
@@ -21,6 +22,7 @@ namespace Entities.Dtos
                 PhotoUrl = dto.PhotoUrl,
                 Title = dto.Title,
                 Text = dto.Text,
+                IsHomePage = dto.IsHomePage,
                 TeamboardId = dto.TeamboardId,
             };
         }

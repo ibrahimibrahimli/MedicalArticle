@@ -1,0 +1,52 @@
+﻿@model Blog
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TeamboardId" class="control-label">Yazar</label>
+                <select asp-for="TeamboardId" class="form-control">
+                    @foreach (var item in ViewData["Teamboard"] as IEnumerable<TeamBoard>)
+                    {
+                        <option value="@item.Id">@item.Name @item.Surname</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Başlıq</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label">Mətn</label>
+                <textarea asp-for="Text" class="form-control" id="answer"></textarea>
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+
+            <div class="form-group d-flex align-items-center">
+                <span style="margin-right:1rem;">Ana Səhifə?</span>
+                <input asp-for="IsHomePage" class="form-control" id="answer" type="checkbox" />
+            </div>
+
+            <div class="form-group" style="min-height:300px;">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="img-fluid" src="@Model.PhotoUrl" />
+                    </div>
+                    <div class="card p-3 mt-3">
+                        <input type="file" asp-for="PhotoUrl" name="ImageUrl" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@DefaultConstantValues.ADD_MESSAGE" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@DefaultConstantValues.RETURN_TO_BACK</a>
+</div>

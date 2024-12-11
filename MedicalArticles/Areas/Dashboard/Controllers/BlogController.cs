@@ -21,7 +21,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Index()
         {
-            var data = _blogService.GetAll().Data;
+            var data = _blogService.GetServicesWithCategory().Data;
             return View(data);
         }
 

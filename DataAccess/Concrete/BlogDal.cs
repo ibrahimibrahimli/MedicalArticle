@@ -27,10 +27,11 @@ namespace DataAccess.Concrete
                              Title = blog.Title,
                              Text = blog.Text,
                              PhotoUrl = blog.PhotoUrl,
+                             IsHomePage = blog.IsHomePage,
                              TeamboardName = teamboard.Name,
                              TeamboardSurname = teamboard.Surname,
                          };
-            return [..result];
+            return [.. result];
         }
     }
 }
