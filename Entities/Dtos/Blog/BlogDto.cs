@@ -9,11 +9,12 @@ namespace Entities.Dtos
 {
     public class BlogDto
     {
-        public int TeamboardId { get; set; }
+        public int Id { get; set; }
         public string PhotoUrl { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
         public string TeamboardName { get; set; }
         public string TeamboardSurname { get; set; }
+        public int TeamboardId { get; set; }
     }
 }
