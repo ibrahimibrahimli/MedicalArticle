@@ -22,6 +22,10 @@ namespace Business.Extensions
             services.AddScoped<IAdressService, AdressManager>();
             services.AddScoped<IValidator<Adress>, AdressValidation>();
 
+            services.AddScoped<IBlogDal, BlogDal>();
+            services.AddScoped<IBlogService, BlogManager>();
+            services.AddScoped<IValidator<Blog>, BlogValidation>();
+
 
             services.AddScoped<ICategoryDal, CategoryDal>();
             services.AddScoped<ICategoryService, CategoryManager>();
