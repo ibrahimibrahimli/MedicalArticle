@@ -27,6 +27,7 @@ namespace DataAccess.SqlServerDBContext
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Faq> Faqs { get; set; }
+        public DbSet<Fact> Facts { get; set; }
         public DbSet<HealtTip> HealtTips { get; set; }
         public DbSet<HealtTipItems> HealtTipsItems { get; set; }
         public DbSet<Service> Services { get; set; }

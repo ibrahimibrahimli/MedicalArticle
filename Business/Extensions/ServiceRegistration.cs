@@ -38,7 +38,11 @@ namespace Business.Extensions
             services.AddScoped<IFaqDal, FaqDal>();
             services.AddScoped<IFaqService, FaqManager>();
             services.AddScoped<IValidator<Faq>, FaqValidation>();
-            
+
+            services.AddScoped<IFactDal, FactDal>();
+            services.AddScoped<IFactService, FactManager>();
+            services.AddScoped<IValidator<Fact>, FactValidation>();
+
             services.AddScoped<IHealtTipDal, HealtTipDal>();
             services.AddScoped<IHealtTipService, HealtTipManager>();
             services.AddScoped<IValidator<HealtTip>, HealtTipValidation>();
