@@ -8,6 +8,8 @@ namespace Entities.Dtos
         public string Content { get; set; }
         public string PhotoUrl { get; set; }
 
+        public int LanguageId { get; set; }
+
         public static Slide ToSlide(SlideCreateDto dto)
         {
             return new Slide
@@ -15,6 +17,7 @@ namespace Entities.Dtos
                 Title = dto.Title,
                 Content = dto.Content,
                 PhotoUrl = dto.PhotoUrl,
+                LanguageId = dto.LanguageId,
             };
         }
     }

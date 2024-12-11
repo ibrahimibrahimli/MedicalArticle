@@ -10,28 +10,33 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
     {
         private readonly ISlideService _slideService;
         private readonly IWebHostEnvironment _env;
+        private readonly ILanguageService _languageService;
 
-        public SlideController(ISlideService slideService, IWebHostEnvironment env)
+        public SlideController(ISlideService slideService, IWebHostEnvironment env, ILanguageService languageService)
         {
             _slideService = slideService;
             _env = env;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _slideService.GetAll().Data;
+            var data = _slideService.GetAll("en-US").Data;
             return View(data);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             return View();
         }
 
         [HttpPost]
         public IActionResult Create(SlideCreateDto dto, IFormFile photoUrl)
         {
+
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var result = _slideService.Add(dto, photoUrl, _env.WebRootPath);
             if (!result.IsSuccess)
             {
@@ -44,6 +49,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var data = _slideService.GetById(id).Data;
             return View(data);
         }

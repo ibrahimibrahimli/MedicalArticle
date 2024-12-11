@@ -9,17 +9,18 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
     {
         private readonly IAboutService _aboutService;
         private readonly IWebHostEnvironment _env;
+        private readonly ILanguageService _languageService;
 
-        public AboutController(IAboutService aboutService, IWebHostEnvironment env)
+        public AboutController(IAboutService aboutService, IWebHostEnvironment env, ILanguageService languageService)
         {
             _aboutService = aboutService;
             _env = env;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
             var data = _aboutService.GetAll().Data;
-            ViewBag.ShowButton = data.Count == 0;
             return View(data);
         }
 
@@ -27,6 +28,8 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Create()
         {
+
+            ViewData["Languages"] = _languageService.GetAll().Data;
             return View();
         }
 
@@ -34,6 +37,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
          public IActionResult Create(AboutCreateDto dto, IFormFile photoUrl)
         {
             var result = _aboutService.Add(dto, photoUrl, _env.WebRootPath);
+            ViewData["Languages"] = _languageService.GetAll().Data;
 
             if (!result.IsSuccess)
             {

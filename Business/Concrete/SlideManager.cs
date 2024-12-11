@@ -45,9 +45,9 @@ namespace Business.Concrete
             return new SuccessResult(UiMessages.SuccessAddedMessage(model.Title));
         }
 
-        public IDataResult<List<Slide>> GetAll()
+        public IDataResult<List<Slide>> GetAll(string lang)
         {
-            return new SuccessDataResult<List<Slide>>(_slideDal.GetAll(x => x.Deleted == 0));
+            return new SuccessDataResult<List<Slide>>(_slideDal.GetDataByLanguage(lang));
         }
 
         public IDataResult<List<Slide>> GetAllDeleted()

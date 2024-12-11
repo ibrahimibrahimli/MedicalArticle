@@ -23,7 +23,8 @@ namespace MedicalArticles.Controllers
 
         public IActionResult Index()
         {
-            var slideData = _slideService.GetAll().Data;
+            //var lang = 
+            var slideData = _slideService.GetAll("az-Latn").Data;
             var aboutData = _serviceAbout.GetServiceAboutWithItems().Data;
             var serviceData = _serviceService.GetServicesWithCategory().Data;
             var healtTipData = _healtTipService.GetHealtTipsWithItems().Data;
