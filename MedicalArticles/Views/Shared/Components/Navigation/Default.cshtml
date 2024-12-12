@@ -60,8 +60,49 @@
             <!-- Start Atribute Navigation -->
             <div class="attr-nav">
                 <ul>
-                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                    <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
+                    <style>
+                        .dropdown{
+                            position:relative;
+                        }
+                        .dropdown-menu {
+                            display: none;
+                            position: absolute;
+                            left:-90px;
+                            z-index: 1000;
+                            background: white;
+                            padding: 10px;
+                            border: 1px solid #ddd;
+                            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                          }
+
+                        .dropdown:hover .dropdown-menu {
+                            display: block;
+                        }
+                    </style>
+                    <li>
+                    <div class="dropdown m-1">
+                        <button type="button" class="btn dropdown-toggle" style="background:white;" data-toggle="dropdown"> <i style="color:#0cb8b6; font-size:18px;" class="fa fa-globe"></i></button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="az-Latn" class="dropdown-item">
+                                    Azərbaycanca
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="dropdown-item">
+                                    English
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="ru-RU" class="dropdown-item">
+                                    Русский
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    </li>
                 </ul>
             </div>
             <!-- End Atribute Navigation -->
@@ -82,7 +123,7 @@
                         <a asp-controller="Home" asp-action="Index" class="active">@_localization.getKey("Home").Value</a>
                     </li>
                     <li class="dropdown">
-                        <a asp-controller="About" asp-action="Index" class=" active">About</a>
+                        <a asp-controller="About" asp-action="Index" class=" active">@_localization.getKey("About").Value</a>
                     </li>
                     <li class="dropdown">
                         <a asp-controller="Service" asp-action="Index" class=" active">Service</a>
@@ -102,31 +143,6 @@
                     </li>
 
                     <li>
-                        <!-- Start Language -->
-                    <li>
-                        <div class="dropdown m-1">
-                            <button type="button" class="btn dropdown-toggle" style="background:white;" data-toggle="dropdown"> <i style="color:#0cb8b6;" class="fa fa-globe"></i></button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a asp-controller="Home"  asp-action="ChangeLanguage" asp-route-culture="az-Latn" class="dropdown-item">
-                                        Azərbaycanca
-                                    </a>
-                                </li>
-                                <li>
-                                    <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="dropdown-item">
-                                        English
-                                    </a>
-                                </li>
-                                <li>
-                                    <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="ru-RU" class="dropdown-item">
-                                        Русский
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </div>
-                    </li>
                     <!-- End Language -->
                     </li>
 

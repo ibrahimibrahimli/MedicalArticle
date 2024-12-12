@@ -13,16 +13,14 @@ namespace MedicalArticles.Controllers
         private readonly IServiceService _serviceService;
         private readonly IHealtTipService _healtTipService;
         private readonly ITeamBoardService _teamBoardService;
-        private readonly LanguageService _languageService;
 
-        public HomeController(ISlideService slideService, IServiceAboutItemsService aboutItemsService, IServiceService serviceService, ITeamBoardService teamBoardService, IServiceAboutService serviceAbout, IHealtTipService healtTipService, LanguageService languageService)
+        public HomeController(ISlideService slideService, IServiceAboutItemsService aboutItemsService, IServiceService serviceService, ITeamBoardService teamBoardService, IServiceAboutService serviceAbout, IHealtTipService healtTipService)
         {
             _slideService = slideService;
             _serviceService = serviceService;
             _teamBoardService = teamBoardService;
             _serviceAbout = serviceAbout;
             _healtTipService = healtTipService;
-            _languageService = languageService;
         }
 
         public IActionResult Index()

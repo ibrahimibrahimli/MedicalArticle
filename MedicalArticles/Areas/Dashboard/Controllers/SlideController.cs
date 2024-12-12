@@ -21,7 +21,8 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Index()
         {
-            var data = _slideService.GetAll("en-US").Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _slideService.GetAll(currentLanguage).Data;
             return View(data);
         }
 

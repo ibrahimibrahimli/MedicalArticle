@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\views\\shared\\components\\navigation\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\areas\\dashboard\\controllers\\slidecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\areas\\dashboard\\controllers\\slidecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6FADB6F-4EC7-4128-ACD9-D77E37B2B422}|Business\\Business.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\business\\concrete\\slidemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6FADB6F-4EC7-4128-ACD9-D77E37B2B422}|Business\\Business.csproj|solutionrelative:business\\concrete\\slidemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,42 +45,20 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "MedicalArticles\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Controllers\\HomeController.cs",
               "RelativeToolTip": "MedicalArticles\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBsAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T07:36:28.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "MedicalArticles\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "MedicalArticles\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T07:48:25.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "MedicalArticles\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "MedicalArticles\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T07:53:07.803Z",
               "EditorCaption": ""
             },
             {
@@ -83,10 +69,61 @@
               "RelativeDocumentMoniker": "MedicalArticles\\Views\\Shared\\Components\\Navigation\\Default.cshtml",
               "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\Shared\\Components\\Navigation\\Default.cshtml",
               "RelativeToolTip": "MedicalArticles\\Views\\Shared\\Components\\Navigation\\Default.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEgAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAD8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-12T07:53:56.994Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SlideController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\SlideController.cs",
+              "RelativeDocumentMoniker": "MedicalArticles\\Areas\\Dashboard\\Controllers\\SlideController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\SlideController.cs",
+              "RelativeToolTip": "MedicalArticles\\Areas\\Dashboard\\Controllers\\SlideController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T20:08:35.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MedicalArticles\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MedicalArticles\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAFYAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T20:26:52.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SlideManager.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Business\\Concrete\\SlideManager.cs",
+              "RelativeDocumentMoniker": "Business\\Concrete\\SlideManager.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Business\\Concrete\\SlideManager.cs",
+              "RelativeToolTip": "Business\\Concrete\\SlideManager.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T07:59:34.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MedicalArticles\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "MedicalArticles\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T07:53:07.803Z"
             }
           ]
         }
