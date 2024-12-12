@@ -1,5 +1,7 @@
-﻿using Business.Abstract;
+﻿    using Business.Abstract;
+using MedicalArticles.Services;
 using MedicalArticles.ViewModels;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalArticles.Controllers
@@ -11,20 +13,23 @@ namespace MedicalArticles.Controllers
         private readonly IServiceService _serviceService;
         private readonly IHealtTipService _healtTipService;
         private readonly ITeamBoardService _teamBoardService;
+        private readonly LanguageService _languageService;
 
-        public HomeController(ISlideService slideService, IServiceAboutItemsService aboutItemsService, IServiceService serviceService, ITeamBoardService teamBoardService, IServiceAboutService serviceAbout, IHealtTipService healtTipService)
+        public HomeController(ISlideService slideService, IServiceAboutItemsService aboutItemsService, IServiceService serviceService, ITeamBoardService teamBoardService, IServiceAboutService serviceAbout, IHealtTipService healtTipService, LanguageService languageService)
         {
             _slideService = slideService;
             _serviceService = serviceService;
             _teamBoardService = teamBoardService;
             _serviceAbout = serviceAbout;
             _healtTipService = healtTipService;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            //var lang = 
-            var slideData = _slideService.GetAll("az-Latn").Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+
+            var slideData = _slideService.GetAll(currentLanguage).Data;
             var aboutData = _serviceAbout.GetServiceAboutWithItems().Data;
             var serviceData = _serviceService.GetServicesWithCategory().Data;
             var healtTipData = _healtTipService.GetHealtTipsWithItems().Data;
@@ -40,6 +45,15 @@ namespace MedicalArticles.Controllers
             };
 
             return View(viewModel);
+        }
+
+        public IActionResult ChangeLanguage(string culture)
+        {
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName, CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)), new CookieOptions()
+            {
+                Expires = DateTimeOffset.UtcNow.AddYears(1)
+            });
+            return Redirect(Request.Headers["Referer"].ToString());
         }
 
         public IActionResult Error()

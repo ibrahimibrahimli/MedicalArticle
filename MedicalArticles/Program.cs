@@ -1,6 +1,11 @@
 using DataAccess.SqlServerDBContext;
 using Entities.Concrete.TableModels.Membership;
 using Business.Extensions;
+using MedicalArticles.Services;
+using System.Reflection;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
 
 namespace MedicalArticles
 {
@@ -12,6 +17,29 @@ namespace MedicalArticles
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            #region Localization
+            builder.Services.AddSingleton<LanguageService>();
+            builder.Services.AddLocalization(l => l.ResourcesPath = "Resources");
+            builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(d => d.DataAnnotationLocalizerProvider = (type, factory) =>
+            {
+                var assemblyName = new AssemblyName(typeof(SharedResource).GetTypeInfo().Assembly.FullName);
+                return factory.Create(nameof(SharedResource), assemblyName.Name);
+            });
+            builder.Services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportCultures = new List<CultureInfo>
+                {
+                    new CultureInfo("en-US"),
+                    new CultureInfo("az-Latn"),
+                    new CultureInfo("ru-RU"),
+                };
+                options.DefaultRequestCulture = new RequestCulture(culture: "az-Latn", uiCulture : "az-Latn");
+                options.SupportedCultures = supportCultures;
+                options.SupportedUICultures = supportCultures;
+                options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+            });
+            #endregion
 
             builder.Services.AddDbContext<ApplicationDbContext>()
                 .AddIdentity<ApplicationUser, ApplicationRole>()
@@ -31,6 +59,8 @@ namespace MedicalArticles
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 
             app.UseRouting();
 
