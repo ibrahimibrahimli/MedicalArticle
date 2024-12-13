@@ -47,7 +47,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Slide>> GetAll(string lang)
         {
-            return new SuccessDataResult<List<Slide>>(_slideDal.GetDataByLanguage(lang));
+            return new SuccessDataResult<List<Slide>>(_slideDal.GetAll(x => x.Deleted == 0));
         }
 
         public IDataResult<List<Slide>> GetAllDeleted()
@@ -58,6 +58,11 @@ namespace Business.Concrete
         public IDataResult<Slide> GetById(int id)
         {
             return new SuccessDataResult<Slide>(_slideDal.GetById(id));
+        }
+
+        public IDataResult<List<Slide>> GetDataByLanguage(string lang)
+        {
+            return new SuccessDataResult<List<Slide>>(_slideDal.GetDataByLanguage(lang));
         }
 
         public IResult HardDelete(int id)

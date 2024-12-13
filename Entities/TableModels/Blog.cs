@@ -14,6 +14,8 @@ namespace Entities.TableModels
         public string Text { get; set; }
         public string PhotoUrl { get; set; }
         public bool IsHomePage { get; set; }
+        public int LanguageId { get; set; }
+        public virtual Language Language { get; set; }
         public virtual TeamBoard TeamBoard { get; set; }
     }
 }

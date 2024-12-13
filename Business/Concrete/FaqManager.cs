@@ -3,6 +3,7 @@ using Business.BaseMessages;
 using Core.Results.Abstract;
 using Core.Results.Concrete;
 using DataAccess.Abstract;
+using DataAccess.Concrete;
 using Entities.Dtos;
 using Entities.TableModels;
 using FluentValidation;
@@ -56,6 +57,11 @@ namespace Business.Concrete
         public IDataResult<Faq> GetById(int id)
         {
             return new SuccessDataResult<Faq>(_faqDal.GetById(id));
+        }
+
+        public IDataResult<List<Faq>> GetDataByLanguage(string lang)
+        {
+            return new SuccessDataResult<List<Faq>>(_faqDal.GetDataByLanguage(lang));
         }
 
         public IResult HardDelete(int id)

@@ -58,6 +58,10 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Fact>(_factDal.GetById(id));
         }
+        public IDataResult<List<Fact>> GetDataByLanguage(string lang)
+        {
+            return new SuccessDataResult<List<Fact>>(_factDal.GetDataByLanguage(lang));
+        }
 
         public IResult HardDelete(int id)
         {

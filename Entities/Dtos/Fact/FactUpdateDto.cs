@@ -9,6 +9,8 @@ namespace Entities.Dtos
         public string Title { get; set; }
         public int Counter { get; set; }
 
+        public int LanguageId { get; set; }
+
         public static Fact ToFact(FactUpdateDto dto)
         {
             return new Fact
@@ -16,7 +18,8 @@ namespace Entities.Dtos
                 Id = dto.Id,
                 IconUrl = dto.IconUrl,
                 Title = dto.Title,
-                Counter = dto.Counter
+                Counter = dto.Counter,
+                LanguageId = dto.LanguageId,
             };
         }
     }

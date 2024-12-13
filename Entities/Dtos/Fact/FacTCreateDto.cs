@@ -7,6 +7,7 @@ namespace Entities.Dtos
         public string IconUrl { get; set; }
         public string Title { get; set; }
         public int Counter { get; set; }
+        public int LanguageId { get; set; }
 
         public static Fact toFact(FacTCreateDto dto)
         {
@@ -14,7 +15,8 @@ namespace Entities.Dtos
             {
                 IconUrl = dto.IconUrl,
                 Title = dto.Title,
-                Counter = dto.Counter
+                Counter = dto.Counter,
+                LanguageId = dto.LanguageId,
             };
         }
     }

@@ -10,5 +10,6 @@ namespace DataAccess.Abstract
 {
     public interface IFaqDal : IBaseRepository<Faq>
     {
+        List<Faq> GetDataByLanguage(string lang);
     }
 }

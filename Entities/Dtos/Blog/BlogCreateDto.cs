@@ -14,6 +14,8 @@ namespace Entities.Dtos
         public string Text { get; set; }
         public bool IsHomePage { get; set; }
         public int TeamboardId { get; set; }
+        public int LanguageId { get; set; }
+
 
         public static Blog ToBlog(BlogCreateDto dto)
         {
@@ -24,6 +26,7 @@ namespace Entities.Dtos
                 Text = dto.Text,
                 IsHomePage = dto.IsHomePage,
                 TeamboardId = dto.TeamboardId,
+                LanguageId = dto.LanguageId,
             };
         }
     }

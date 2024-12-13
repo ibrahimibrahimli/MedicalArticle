@@ -3,6 +3,7 @@ using Business.BaseMessages;
 using Core.Results.Abstract;
 using Core.Results.Concrete;
 using DataAccess.Abstract;
+using DataAccess.Concrete;
 using Entities.Dtos;
 using Entities.TableModels;
 using FluentValidation;
@@ -53,6 +54,11 @@ namespace Business.Concrete
         public IDataResult<Adress> GetById(int id)
         {
            return new SuccessDataResult<Adress>(_adressDal.GetById(id));
+        }
+
+        public IDataResult<List<Adress>> GetDataByLanguage(string lang)
+        {
+            return new SuccessDataResult<List<Adress>>(_adressDal.GetDataByLanguage(lang));
         }
 
         public IResult HardDelete(int id)

@@ -15,5 +15,6 @@ namespace Business.Abstract
         IDataResult<List<Fact>> GetAllDeleted();
         IDataResult<Fact> GetById(int id);
         IResult ReturnDeleted(int id);
+        IDataResult<List<Fact>> GetDataByLanguage(string lang);
     }
 }

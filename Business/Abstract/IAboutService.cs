@@ -14,5 +14,6 @@ namespace Business.Abstract
         IDataResult<List<About>> GetAll();
         IDataResult<List<About>> GetAllDeleted();
         IDataResult<About> GetById(int id);
+        IDataResult<List<About>> GetDataByLanguage(string lang);
     }
 }

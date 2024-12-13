@@ -13,5 +13,6 @@ namespace Business.Abstract
         IDataResult<Adress> GetById(int id);
         IResult SoftDelete(int id);
         IResult HardDelete(int id);
+        IDataResult<List<Adress>> GetDataByLanguage(string lang);
     }
 }

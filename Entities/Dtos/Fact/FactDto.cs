@@ -6,5 +6,6 @@
         public string IconUrl { get; set; }
         public string Title { get; set; }
         public int Counter { get; set; }
+        public int LanguageId { get; set; }
     }
 }

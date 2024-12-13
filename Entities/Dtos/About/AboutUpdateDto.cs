@@ -8,6 +8,8 @@ namespace Entities.Dtos
         public string Title { get; set; }
         public string Description { get; set; }
         public string PhotoUrl { get; set; }
+        public int LanguageId { get; set; }
+
 
         public static About ToAbout(AboutUpdateDto dto)
         {
@@ -17,6 +19,7 @@ namespace Entities.Dtos
                 Title = dto.Title,
                 Description = dto.Description,
                 PhotoUrl = dto.PhotoUrl,
+                LanguageId = dto.LanguageId,
             };
             return about;
         }
