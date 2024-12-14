@@ -21,5 +21,6 @@ namespace Business.Abstract
         IResult SoftDelete(int id); 
         IResult ReturnDeleted(int id);
         IDataResult<List<ServiceDto>> GetServicesWithCategory();
+        IDataResult<List<Service>> GetDataByLanguage(string lang);
     }
 }

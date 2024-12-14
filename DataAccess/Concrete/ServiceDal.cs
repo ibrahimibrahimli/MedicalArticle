@@ -2,7 +2,8 @@
 using DataAccess.Abstract;
 using DataAccess.SqlServerDBContext;
 using Entities.Dtos;
-using Entities.TableModels; 
+using Entities.TableModels;
+using Microsoft.EntityFrameworkCore;
 namespace DataAccess.Concrete
 {
     public class ServiceDal : BaseRepository<Service, ApplicationDbContext>, IServiceDal
@@ -30,6 +31,15 @@ namespace DataAccess.Concrete
                              CategoryIconName = category.IconName,
                          };
             return [..result];
+        }
+        public List<Service> GetDataByLanguage(string lang)
+        {
+            var data = _context.Services
+                .Include(d => d.Language)
+                .Where(d => d.Language.Key == lang)
+                .Where(d => d.Deleted == 0);
+
+            return [.. data];
         }
     }
 }

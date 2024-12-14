@@ -12,5 +12,6 @@ namespace DataAccess.Abstract
     public interface IServiceDal : IBaseRepository<Service>
     {
         List<ServiceDto> GetServicesWithCategory();
+        List<Service> GetDataByLanguage(string lang);
     }
 }
