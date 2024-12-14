@@ -8,5 +8,6 @@
         public string ServiceAboutTitle { get; set; }
         public string ServiceAboutDescription { get; set; }
         public string ServiceAboutPhotoUrl { get; set; }
+        public int LanguageId { get; set; }
     }
 }

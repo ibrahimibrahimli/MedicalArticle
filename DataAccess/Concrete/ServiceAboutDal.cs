@@ -16,40 +16,34 @@ namespace DataAccess.Concrete
             _context = context;
         }
 
-        public List<ServiceAboutDto> GetServiceAboutWithItems()
+        public List<ServiceAboutDto> GetServiceAboutWithItems(string lang)
         {
             var result = from serviceAbout in _context.ServiceAbouts
-                         where serviceAbout.Deleted == 0
+                         .Include(r => r.Language)
+                         .Where(r => r.Language.Key == lang)
+                         .Where(r => r.Deleted == 0)
                          join serviceAboutItems in _context.ServiceAboutItems
-                         on serviceAbout.Id equals serviceAboutItems.ServiceAboutId into serviceAboutItemGroup
+                         on serviceAbout.Id equals serviceAboutItems.ServiceAboutId 
+                         into serviceAboutItemGroup
+                         
                          select new ServiceAboutDto
                          {
                              Id = serviceAbout.Id,
                              Description = serviceAbout.Description,
                              Title = serviceAbout.Title,
                              PhotoUrl = serviceAbout.PhotoUrl,
+                             LanguageId = serviceAbout.LanguageId,
                              ServiceAboutItems = serviceAboutItemGroup
-                                 .Select(item => new ServiceAboutItemDto
+                                 .Where(item => item.Deleted ==0)
+                                 .Select(item => new ServiceAboutItems
                                  {
                                      Id = item.Id,
                                      Text = item.Text,
 
-                                 })
-                                 .ToList()
+                                 }).ToList()
                          };
 
-            return [.. result];
-        }
-
-
-        public List<ServiceAbout> GetDataByLanguage(string lang)
-        {
-            var data = _context.ServiceAbouts
-                .Include(d => d.Language)
-                .Where(d => d.Language.Key == lang)
-                .Where(d => d.Deleted == 0);
-
-            return [.. data];
+            return [..result];
         }
 
     }

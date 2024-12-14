@@ -32,7 +32,7 @@ namespace DataAccess.SqlServerDBContext
         public DbSet<HealtTipItems> HealtTipsItems { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceAbout> ServiceAbouts { get; set; }
-        public DbSet<ServiceAboutItemDto> ServiceAboutItems { get; set; }
+        public DbSet<ServiceAboutItems> ServiceAboutItems { get; set; }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Sosial> Sosials { get; set; }
         public DbSet<Contact> Contacts { get; set; }

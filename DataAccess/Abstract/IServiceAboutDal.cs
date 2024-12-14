@@ -6,7 +6,6 @@ namespace DataAccess.Abstract
 {
     public interface IServiceAboutDal : IBaseRepository<ServiceAbout>
     {
-        List<ServiceAboutDto> GetServiceAboutWithItems();
-        List<ServiceAbout> GetDataByLanguage(string lang);
+        List<ServiceAboutDto> GetServiceAboutWithItems(string lang);
     }
 }

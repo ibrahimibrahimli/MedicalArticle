@@ -7,14 +7,16 @@ namespace Entities.Dtos
         public int Id { get; set; }
         public int ServiceAboutId { get; set; }
         public string Text { get; set; }
+        public int LanguageId { get; set; }
 
-        public static ServiceAboutItemDto ToServiceAboutItems(ServiceAboutItemsUpdateDto dto)
+        public static ServiceAboutItems ToServiceAboutItems(ServiceAboutItemsUpdateDto dto)
         {
-            ServiceAboutItemDto serviceAboutItems = new ServiceAboutItemDto()
+            ServiceAboutItems serviceAboutItems = new ServiceAboutItems()
             {
                 Id = dto.Id,
                 Text = dto.Text,
-                ServiceAboutId = dto.ServiceAboutId
+                ServiceAboutId = dto.ServiceAboutId,
+                LanguageId = dto.LanguageId,
             };
             return serviceAboutItems;
         }

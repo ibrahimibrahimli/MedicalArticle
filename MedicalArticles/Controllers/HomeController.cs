@@ -1,5 +1,4 @@
-﻿    using Business.Abstract;
-using MedicalArticles.Services;
+﻿using Business.Abstract;
 using MedicalArticles.ViewModels;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +27,7 @@ namespace MedicalArticles.Controllers
             var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
 
             var slideData = _slideService.GetDataByLanguage(currentLanguage).Data;
-            var aboutData = _serviceAbout.GetServiceAboutWithItems().Data;
+            var aboutData = _serviceAbout.GetServiceAboutWithItems(currentLanguage).Data;
             var serviceData = _serviceService.GetServicesWithCategory().Data;
             var healtTipData = _healtTipService.GetDataByLanguage(currentLanguage).Data;
             var teamboardData = _teamBoardService.GetAll().Data;

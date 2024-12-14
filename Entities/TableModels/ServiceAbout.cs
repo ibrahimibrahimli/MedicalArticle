@@ -1,4 +1,5 @@
 ﻿using Core.Entities.Abstract;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,6 @@ namespace Entities.TableModels
         public string PhotoUrl { get; set; }
         public int LanguageId { get; set; }
         public virtual Language Language { get; set; }
-        public ICollection<ServiceAboutItemDto> ServiceAboutItems { get; set; }
+        public ICollection<ServiceAboutItemsDto> ServiceAboutItems { get; set; }
     }
 }

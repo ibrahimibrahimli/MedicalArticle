@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4000DBC8-31B4-4EAF-9D05-C84C9C428B50}|Entities\\Entities.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\entities\\dtos\\serviceabout\\serviceaboutupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4000DBC8-31B4-4EAF-9D05-C84C9C428B50}|Entities\\Entities.csproj|solutionrelative:entities\\dtos\\serviceabout\\serviceaboutupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6FADB6F-4EC7-4128-ACD9-D77E37B2B422}|Business\\Business.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\business\\concrete\\serviceaboutmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6FADB6F-4EC7-4128-ACD9-D77E37B2B422}|Business\\Business.csproj|solutionrelative:business\\concrete\\serviceaboutmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4000DBC8-31B4-4EAF-9D05-C84C9C428B50}|Entities\\Entities.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\entities\\dtos\\serviceabout\\serviceaboutcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4000DBC8-31B4-4EAF-9D05-C84C9C428B50}|Entities\\Entities.csproj|solutionrelative:entities\\dtos\\serviceabout\\serviceaboutcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6FADB6F-4EC7-4128-ACD9-D77E37B2B422}|Business\\Business.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\business\\abstract\\iserviceaboutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6FADB6F-4EC7-4128-ACD9-D77E37B2B422}|Business\\Business.csproj|solutionrelative:business\\abstract\\iserviceaboutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4000DBC8-31B4-4EAF-9D05-C84C9C428B50}|Entities\\Entities.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\entities\\dtos\\serviceabout\\serviceaboutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4000DBC8-31B4-4EAF-9D05-C84C9C428B50}|Entities\\Entities.csproj|solutionrelative:entities\\dtos\\serviceabout\\serviceaboutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\areas\\dashboard\\controllers\\serviceaboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\areas\\dashboard\\controllers\\serviceaboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05DD22AD-AA07-44E7-92F6-80DEC59DA9DB}|DataAccess\\DataAccess.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\dataaccess\\concrete\\serviceaboutdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05DD22AD-AA07-44E7-92F6-80DEC59DA9DB}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\concrete\\serviceaboutdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05DD22AD-AA07-44E7-92F6-80DEC59DA9DB}|DataAccess\\DataAccess.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\dataaccess\\abstract\\iserviceaboutdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05DD22AD-AA07-44E7-92F6-80DEC59DA9DB}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\abstract\\iserviceaboutdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,41 +42,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ServiceAboutDto.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Entities\\Dtos\\ServiceAbout\\ServiceAboutDto.cs",
-              "RelativeDocumentMoniker": "Entities\\Dtos\\ServiceAbout\\ServiceAboutDto.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Entities\\Dtos\\ServiceAbout\\ServiceAboutDto.cs",
-              "RelativeToolTip": "Entities\\Dtos\\ServiceAbout\\ServiceAboutDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "IServiceAboutDal.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\DataAccess\\Abstract\\IServiceAboutDal.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Abstract\\IServiceAboutDal.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\DataAccess\\Abstract\\IServiceAboutDal.cs*",
+              "RelativeToolTip": "DataAccess\\Abstract\\IServiceAboutDal.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T07:35:00.391Z",
+              "WhenOpened": "2024-12-14T10:45:06.757Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ServiceAboutCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Entities\\Dtos\\ServiceAbout\\ServiceAboutCreateDto.cs",
-              "RelativeDocumentMoniker": "Entities\\Dtos\\ServiceAbout\\ServiceAboutCreateDto.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Entities\\Dtos\\ServiceAbout\\ServiceAboutCreateDto.cs",
-              "RelativeToolTip": "Entities\\Dtos\\ServiceAbout\\ServiceAboutCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ServiceAboutDal.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\DataAccess\\Concrete\\ServiceAboutDal.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Concrete\\ServiceAboutDal.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\DataAccess\\Concrete\\ServiceAboutDal.cs*",
+              "RelativeToolTip": "DataAccess\\Concrete\\ServiceAboutDal.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwC0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T07:35:08.372Z",
+              "WhenOpened": "2024-12-14T10:46:24.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiceAboutController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\ServiceAboutController.cs",
+              "RelativeDocumentMoniker": "MedicalArticles\\Areas\\Dashboard\\Controllers\\ServiceAboutController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\ServiceAboutController.cs",
+              "RelativeToolTip": "MedicalArticles\\Areas\\Dashboard\\Controllers\\ServiceAboutController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T11:10:32.074Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ServiceAboutUpdateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Entities\\Dtos\\ServiceAbout\\ServiceAboutUpdateDto.cs",
-              "RelativeDocumentMoniker": "Entities\\Dtos\\ServiceAbout\\ServiceAboutUpdateDto.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Entities\\Dtos\\ServiceAbout\\ServiceAboutUpdateDto.cs",
-              "RelativeToolTip": "Entities\\Dtos\\ServiceAbout\\ServiceAboutUpdateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAsAAAAAAAAAA==",
+              "Title": "ServiceAboutManager.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Business\\Concrete\\ServiceAboutManager.cs",
+              "RelativeDocumentMoniker": "Business\\Concrete\\ServiceAboutManager.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Business\\Concrete\\ServiceAboutManager.cs",
+              "RelativeToolTip": "Business\\Concrete\\ServiceAboutManager.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T07:35:17.065Z",
+              "WhenOpened": "2024-12-14T11:11:56.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IServiceAboutService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Business\\Abstract\\IServiceAboutService.cs",
+              "RelativeDocumentMoniker": "Business\\Abstract\\IServiceAboutService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\Business\\Abstract\\IServiceAboutService.cs",
+              "RelativeToolTip": "Business\\Abstract\\IServiceAboutService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T11:12:12.104Z",
               "EditorCaption": ""
             }
           ]

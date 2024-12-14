@@ -3,10 +3,11 @@ using DataAccess.Abstract;
 using DataAccess.SqlServerDBContext;
 using Entities.Dtos;
 using Entities.TableModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
 {
-    public class ServiceAboutItemsDal : BaseRepository<ServiceAboutItemDto, ApplicationDbContext>, IServiceAboutItemsDal
+    public class ServiceAboutItemsDal : BaseRepository<ServiceAboutItems, ApplicationDbContext>, IServiceAboutItemsDal
     {
         private readonly ApplicationDbContext? _context;
 
@@ -30,6 +31,17 @@ namespace DataAccess.Concrete
                              ServiceAboutPhotoUrl = serviceAbout.PhotoUrl,
                          };
             return [.. result];
+        }
+
+
+        public List<ServiceAboutItems> GetDataByLanguage(string lang)
+        {
+            var data = _context.ServiceAboutItems
+                .Include(d => d.Language)
+                .Where(d => d.Language.Key == lang)
+                .Where(d => d.Deleted == 0);
+
+            return [.. data];
         }
     }
 }

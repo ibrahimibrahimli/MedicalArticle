@@ -4,8 +4,9 @@ using Entities.TableModels;
 
 namespace DataAccess.Abstract
 {
-    public interface IServiceAboutItemsDal : IBaseRepository<ServiceAboutItemDto>
+    public interface IServiceAboutItemsDal : IBaseRepository<ServiceAboutItems>
     {
         List<ServiceAboutItemsDto> GetServiceAboutItemsWidthServiceAbout();
+        List<ServiceAboutItems> GetDataByLanguage(string lang);
     }
 }

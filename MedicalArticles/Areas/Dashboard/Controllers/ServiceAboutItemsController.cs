@@ -16,7 +16,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
             _serviceAboutService = serviceAboutService;
         }
 
-        public IActionResult Index()
+        public IActionResult Insdex()
         {
             var data = _serviceAboutItemsService.GetAll().Data;
             return View(data);
