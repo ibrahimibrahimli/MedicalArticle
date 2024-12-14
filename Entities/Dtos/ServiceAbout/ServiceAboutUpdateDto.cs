@@ -10,6 +10,8 @@ namespace Entities.Dtos
         public string Description { get; set; }
         public string PhotoUrl { get; set; }
 
+        public int LanguageId { get; set; }
+
         public static ServiceAbout ToServiceAbout(ServiceAboutUpdateDto dto)
         {
             ServiceAbout serviceAbout = new ServiceAbout()
@@ -18,6 +20,7 @@ namespace Entities.Dtos
                 Title = dto.Title,
                 Description = dto.Description,
                 PhotoUrl = dto.PhotoUrl,
+                LanguageId = dto.LanguageId,
             };
             return serviceAbout;
         }

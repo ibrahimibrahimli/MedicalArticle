@@ -9,6 +9,7 @@ namespace Entities.Dtos
 
         public int HealtTipId { get; set; }
         public string Text { get; set; }
+        public int LanguageId { get; set; }
 
         public static HealtTipItems ToHealtTipItems(HealtTipItemsUpdateDto dto)
         {
@@ -16,7 +17,8 @@ namespace Entities.Dtos
             {
                 Id = dto.Id,
                 Text = dto.Text,
-                HealtTipId = dto.HealtTipId
+                HealtTipId = dto.HealtTipId,
+                LanguageId = dto.LanguageId,
             };
             return healtTipItems;
         }

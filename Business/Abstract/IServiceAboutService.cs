@@ -16,5 +16,6 @@ namespace Business.Abstract
         IDataResult<ServiceAbout> GetById(int id);
         IResult ReturnDeleted (int id);
         IDataResult<List<ServiceAboutDto>> GetServiceAboutWithItems();
+        IDataResult<List<ServiceAbout>> GetDataByLanguage(string lang);
     }
 }

@@ -8,7 +8,7 @@ namespace MedicalArticles.ViewModels
         public List<Slide> Slides { get; set; }
         public List<ServiceAboutDto> ServiceAbout { get; set; }
         public List<ServiceDto> Services { get; set; }
-        public List<HealtTipDto> HealtTip{ get; set; }
+        public List<HealtTip> HealtTip{ get; set; }
         public List<TeamBoard> Teamboard { get; set; }
     }
 }

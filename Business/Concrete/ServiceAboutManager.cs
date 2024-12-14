@@ -4,7 +4,6 @@ using Core.Extension;
 using Core.Results.Abstract;
 using Core.Results.Concrete;
 using DataAccess.Abstract;
-using DataAccess.Concrete;
 using Entities.Dtos;
 using Entities.TableModels;
 using FluentValidation;
@@ -61,6 +60,10 @@ namespace Business.Concrete
             return new SuccessDataResult<ServiceAbout>(_serviceAboutDal.GetById(id));
         }
 
+        public IDataResult<List<ServiceAbout>> GetDataByLanguage(string lang)
+        {
+            return new SuccessDataResult<List<ServiceAbout>>(_serviceAboutDal.GetDataByLanguage(lang));
+        }
         public IDataResult<List<ServiceAboutDto>> GetServiceAboutWithItems()
         {
             return new SuccessDataResult<List<ServiceAboutDto>>(_serviceAboutDal.GetServiceAboutWithItems());

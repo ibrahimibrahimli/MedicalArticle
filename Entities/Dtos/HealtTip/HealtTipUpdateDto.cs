@@ -12,6 +12,7 @@ namespace Entities.Dtos
         public string Description { get; set; }
         public string SubTitle { get; set; }
         public string PhotoUrl { get; set; }
+        public int LanguageId { get; set; }
 
         public static HealtTip ToHealtTip(HealtTipUpdateDto dto)
         {
@@ -25,6 +26,7 @@ namespace Entities.Dtos
                 Description = dto.Description,
                 SubTitle = dto.SubTitle,
                 PhotoUrl = dto.PhotoUrl,
+                LanguageId = dto.LanguageId,
             };
             return healtTip;
         }

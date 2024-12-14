@@ -7,5 +7,6 @@ namespace DataAccess.Abstract
     public interface IHealtTipItemsDal : IBaseRepository<HealtTipItems>
     {
         List<HealtTipItemsDto> GetHealtTipItemsWithHealtTip();
+        List<HealtTipItems> GetDataByLanguage(string lang);
     }
 }

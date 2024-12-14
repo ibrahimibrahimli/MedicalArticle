@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.TableModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,6 @@ namespace Entities.Dtos
         public string PhotoUrl { get; set; }
         public string CategoryName { get; set; }
         public string CategoryIconName { get; set; }
+        public int LanguageId { get; set; }
     }
 }

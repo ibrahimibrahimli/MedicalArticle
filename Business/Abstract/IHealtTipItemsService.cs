@@ -16,5 +16,6 @@ namespace Business.Abstract
         IDataResult<HealtTipItems> GetById(int id);
         IResult ReturnDeleted (int id);
         IDataResult<List<HealtTipItemsDto>> GetHealtTipItemsWithHealtTip();
+        IDataResult<List<HealtTipItems>> GetDataByLanguage(string lang);
     }
 }

@@ -7,6 +7,7 @@ namespace Entities.Dtos
         public string Title { get; set; }
         public string Description { get; set; }
         public string PhotoUrl { get; set; }
+        public int LanguageId { get; set; }
 
         public static ServiceAbout ToServiceAbout(ServiceAboutCreateDto dto)
         {
@@ -15,6 +16,7 @@ namespace Entities.Dtos
                 Title = dto.Title,
                 Description = dto.Description,
                 PhotoUrl = dto.PhotoUrl,
+                LanguageId = dto.LanguageId
             };
             return serviceAbout;
         }

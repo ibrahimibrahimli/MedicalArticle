@@ -3,6 +3,7 @@ using DataAccess.Abstract;
 using DataAccess.SqlServerDBContext;
 using Entities.Dtos;
 using Entities.TableModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
 {
@@ -38,6 +39,17 @@ namespace DataAccess.Concrete
                          };
 
             return [.. result];
+        }
+
+
+        public List<ServiceAbout> GetDataByLanguage(string lang)
+        {
+            var data = _context.ServiceAbouts
+                .Include(d => d.Language)
+                .Where(d => d.Language.Key == lang)
+                .Where(d => d.Deleted == 0);
+
+            return [.. data];
         }
 
     }

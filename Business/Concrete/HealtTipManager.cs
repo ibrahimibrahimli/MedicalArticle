@@ -61,6 +61,11 @@ namespace Business.Concrete
             return new SuccessDataResult<HealtTip>(_healtTipDal.GetById(id));
         }
 
+        public IDataResult<List<HealtTip>> GetDataByLanguage(string lang)
+        {
+            return new SuccessDataResult<List<HealtTip>>(_healtTipDal.GetDataByLanguage(lang));
+        }
+
         public IDataResult<List<HealtTipDto>> GetHealtTipsWithItems()
         {
             return new SuccessDataResult<List<HealtTipDto>>(_healtTipDal.GetHealtTipsWithItems());
