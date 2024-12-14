@@ -2,6 +2,7 @@
 using Entities.TableModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Reflection.Emit;
 
 namespace DataAccess.Configurations
 {
@@ -36,7 +37,15 @@ namespace DataAccess.Configurations
 
             builder.Property(x => x.SubTitle)
                .IsRequired()
-               .HasMaxLength(1000);
+            .HasMaxLength(1000);
+
+            builder.HasOne(h => h.Language)
+                .WithMany()
+                .HasForeignKey(h => h.LanguageId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
         }
     }
+    
 }

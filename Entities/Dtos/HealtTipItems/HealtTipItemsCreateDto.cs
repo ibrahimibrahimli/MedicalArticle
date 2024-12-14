@@ -7,7 +7,6 @@ namespace Entities.Dtos
 
         public int HealtTipId { get; set; }
         public string Text { get; set; }
-        public int LanguageId { get; set; }
 
         public static HealtTipItems ToHealtTipItems(HealtTipItemsCreateDto dto)
         {
@@ -15,7 +14,6 @@ namespace Entities.Dtos
             {
                 HealtTipId = dto.HealtTipId,
                 Text = dto.Text,
-                LanguageId = dto.LanguageId,
             };
             return healtTipItems;
         }

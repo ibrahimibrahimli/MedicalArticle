@@ -17,6 +17,11 @@ namespace DataAccess.Configurations
             builder.Property(x => x.Description)
                 .IsRequired()
                 .HasMaxLength(3000);
+
+            builder.HasOne(x => x.Language)
+                .WithMany()
+                .HasForeignKey(x => x.LanguageId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

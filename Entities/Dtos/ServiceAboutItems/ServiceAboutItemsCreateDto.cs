@@ -6,7 +6,6 @@ namespace Entities.Dtos
     {
         public int ServiceAboutId { get; set; }
         public string Text { get; set; }
-        public int LanguageId { get; set; }
 
         public static ServiceAboutItems ToServiceAboutItems(ServiceAboutItemsCreateDto dto)
         {
@@ -14,7 +13,6 @@ namespace Entities.Dtos
             {
                 Text = dto.Text,
                 ServiceAboutId = dto.ServiceAboutId,
-                LanguageId = dto.LanguageId,
             };
             return serviceAboutItems;
         }

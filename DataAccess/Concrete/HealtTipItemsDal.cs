@@ -36,14 +36,5 @@ namespace DataAccess.Concrete
                          };
             return [.. result];
         }
-        public List<HealtTipItems> GetDataByLanguage(string lang)
-        {
-            var data = _context.HealtTipsItems
-                .Include(d => d.Language)
-                .Where(d => d.Language.Key == lang)
-                .Where(d => d.Deleted == 0);
-
-            return [.. data];
-        }
     }
 }

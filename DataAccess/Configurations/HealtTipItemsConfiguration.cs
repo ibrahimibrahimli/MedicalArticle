@@ -2,6 +2,7 @@
 using Entities.TableModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Reflection.Emit;
 
 namespace DataAccess.Configurations
 {
@@ -16,7 +17,14 @@ namespace DataAccess.Configurations
 
             builder.Property(x => x.Text)
                .IsRequired()
-               .HasMaxLength(1000);
+            .HasMaxLength(1000);
+
+
+
+            builder.HasOne(x => x.HealtTip)
+      .WithMany(x => x.HealtTipItems)
+      .HasForeignKey(x => x.HealtTipId)
+      .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -59,11 +59,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<HealtTipItems>(_healtTipItemsDal.GetById(id));
         }
-
-        public IDataResult<List<HealtTipItems>> GetDataByLanguage(string lang)
-        {
-            return new SuccessDataResult<List<HealtTipItems>>(_healtTipItemsDal.GetDataByLanguage(lang));
-        }
+        
         public IResult HardDelete(int id)
         {
             HealtTipItems model = _healtTipItemsDal.GetById(id);

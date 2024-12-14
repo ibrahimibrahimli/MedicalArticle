@@ -15,6 +15,6 @@ namespace Entities.TableModels
         public string PhotoUrl { get; set; }
         public int LanguageId { get; set; }
         public virtual Language Language { get; set; }
-        public ICollection<ServiceAboutItemsDto> ServiceAboutItems { get; set; }
+        public ICollection<ServiceAboutItems> ServiceAboutItems { get; set; }
     }
 }

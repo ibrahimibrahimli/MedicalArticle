@@ -21,6 +21,11 @@ namespace DataAccess.Configurations
             builder.Property(x => x.Title)
                 .IsRequired()
                 .HasMaxLength(3000);
+
+            builder.HasOne(x => x.WhyChooseUs)
+               .WithMany(x => x.WhyChooseUsItems)
+               .HasForeignKey(x => x.WhyChooseUsId)
+               .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
