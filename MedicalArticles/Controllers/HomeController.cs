@@ -28,9 +28,9 @@ namespace MedicalArticles.Controllers
 
             var slideData = _slideService.GetDataByLanguage(currentLanguage).Data;
             var aboutData = _serviceAbout.GetServiceAboutWithItems(currentLanguage).Data;
-            var serviceData = _serviceService.GetServicesWithCategory().Data;
+            var serviceData = _serviceService.GetDataByLanguage(currentLanguage).Data;
             var healtTipData = _healtTipService.GetDataByLanguage(currentLanguage).Data;
-            var teamboardData = _teamBoardService.GetAll().Data;
+            var teamboardData = _teamBoardService.GetDataByLanguage(currentLanguage).Data;
 
             HomeViewModel viewModel = new HomeViewModel()
             {

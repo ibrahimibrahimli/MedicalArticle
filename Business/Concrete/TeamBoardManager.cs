@@ -61,6 +61,11 @@ namespace Business.Concrete
             return new SuccessDataResult<TeamBoard>(_teamBoardDal.GetById(id));
         }
 
+        public IDataResult<List<TeamBoard>> GetDataByLanguage(string lang)
+        {
+            return new SuccessDataResult<List<TeamBoard>>(_teamBoardDal.GetDataByLanguage(lang));
+        }
+
         public IResult HardDelete(int id)
         {
             var data = GetById(id).Data;

@@ -15,5 +15,6 @@ namespace Business.Abstract
         IDataResult<List<TeamBoard>> GetAllDeleted();
         IDataResult<TeamBoard> GetById(int id);
         IResult ReturnDeleted(int id);
+        IDataResult<List<TeamBoard>> GetDataByLanguage(string lang);
     }
 }
