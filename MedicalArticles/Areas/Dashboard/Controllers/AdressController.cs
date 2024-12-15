@@ -8,15 +8,18 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
     public class AdressController : Controller
     {
         private readonly IAdressService _adressService;
+        private readonly ILanguageService _languageService;
 
-        public AdressController(IAdressService adressService)
+        public AdressController(IAdressService adressService, ILanguageService languageService)
         {
             _adressService = adressService;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _adressService.GetAll().Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _adressService.GetDataByLanguage(currentLanguage).Data;
             ViewBag.ShowButton = data.Count == 0;
             return View(data);
         }
@@ -25,6 +28,8 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Create()
         {
+
+            ViewData["Languages"] = _languageService.GetAll().Data;
             return View();
         }
 
@@ -32,6 +37,8 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Create(AdressCreateDto dto) 
         {
+
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var result = _adressService.Add(dto);
             if (!result.IsSuccess)
             {
@@ -46,6 +53,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Edit(int id)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var data = _adressService.GetById(id).Data;
             return View(data);
         }

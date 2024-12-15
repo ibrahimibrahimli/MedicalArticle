@@ -25,6 +25,11 @@ namespace DataAccess.Configurations
             builder.Property(x => x.PhotoUrl)
                 .IsRequired()
                 .HasMaxLength(200);
+
+            builder.HasOne(x => x.TeamBoard)
+     .WithMany()
+     .HasForeignKey(x => x.TeamboardId)
+     .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

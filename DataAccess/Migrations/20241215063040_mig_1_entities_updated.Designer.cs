@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241214150110_mig_5_WhyUs_updated")]
-    partial class mig_5_WhyUs_updated
+    [Migration("20241215063040_mig_1_entities_updated")]
+    partial class mig_1_entities_updated
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -235,43 +235,6 @@ namespace DataAccess.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("Entities.Dtos.ServiceAboutItemsDto", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("LanguageId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ServiceAboutDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ServiceAboutId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ServiceAboutPhotoUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ServiceAboutTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Text")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ServiceAboutId");
-
-                    b.ToTable("ServiceAboutItemsDto");
                 });
 
             modelBuilder.Entity("Entities.TableModels.About", b =>
@@ -649,9 +612,6 @@ namespace DataAccess.Migrations
                     b.Property<int>("HealtTipId")
                         .HasColumnType("int");
 
-                    b.Property<int>("LanguageId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasMaxLength(1000)
@@ -663,8 +623,6 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("HealtTipId");
-
-                    b.HasIndex("LanguageId");
 
                     b.ToTable("HealtTipItems", (string)null);
                 });
@@ -802,9 +760,6 @@ namespace DataAccess.Migrations
                     b.Property<int>("Deleted")
                         .HasColumnType("int");
 
-                    b.Property<int>("LanguageId")
-                        .HasColumnType("int");
-
                     b.Property<int>("ServiceAboutId")
                         .HasColumnType("int");
 
@@ -817,8 +772,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("LanguageId");
 
                     b.HasIndex("ServiceAboutId");
 
@@ -1107,15 +1060,6 @@ namespace DataAccess.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Entities.Dtos.ServiceAboutItemsDto", b =>
-                {
-                    b.HasOne("Entities.TableModels.ServiceAbout", null)
-                        .WithMany("ServiceAboutItems")
-                        .HasForeignKey("ServiceAboutId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Entities.TableModels.About", b =>
                 {
                     b.HasOne("Entities.TableModels.Language", "Language")
@@ -1184,7 +1128,7 @@ namespace DataAccess.Migrations
                     b.HasOne("Entities.TableModels.Language", "Language")
                         .WithMany()
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Language");
@@ -1198,15 +1142,7 @@ namespace DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.TableModels.Language", "Language")
-                        .WithMany()
-                        .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("HealtTip");
-
-                    b.Navigation("Language");
                 });
 
             modelBuilder.Entity("Entities.TableModels.Service", b =>
@@ -1241,19 +1177,11 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entities.TableModels.ServiceAboutItems", b =>
                 {
-                    b.HasOne("Entities.TableModels.Language", "Language")
-                        .WithMany()
-                        .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Entities.TableModels.ServiceAbout", "ServiceAbout")
-                        .WithMany()
+                        .WithMany("ServiceAboutItems")
                         .HasForeignKey("ServiceAboutId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Language");
 
                     b.Navigation("ServiceAbout");
                 });
@@ -1285,7 +1213,7 @@ namespace DataAccess.Migrations
                     b.HasOne("Entities.TableModels.Language", "Language")
                         .WithMany()
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Language");

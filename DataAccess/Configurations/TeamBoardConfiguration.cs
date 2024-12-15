@@ -37,6 +37,11 @@ namespace DataAccess.Configurations
             builder.Property(x => x.LinkedinUrl)
                 .IsRequired()
                 .HasMaxLength(200);
+
+            builder.HasOne(h => h.Language)
+               .WithMany()
+               .HasForeignKey(h => h.LanguageId)
+               .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

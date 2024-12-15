@@ -1125,7 +1125,7 @@ namespace DataAccess.Migrations
                     b.HasOne("Entities.TableModels.Language", "Language")
                         .WithMany()
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Language");
@@ -1210,7 +1210,7 @@ namespace DataAccess.Migrations
                     b.HasOne("Entities.TableModels.Language", "Language")
                         .WithMany()
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Language");

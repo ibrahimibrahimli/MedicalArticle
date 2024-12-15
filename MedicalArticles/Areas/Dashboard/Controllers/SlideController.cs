@@ -22,7 +22,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         public IActionResult Index()
         {
             var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
-            var data = _slideService.GetAll(currentLanguage).Data;
+            var data = _slideService.GetDataByLanguage(currentLanguage).Data;
             return View(data);
         }
 

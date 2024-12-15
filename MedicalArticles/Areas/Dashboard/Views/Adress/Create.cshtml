@@ -6,6 +6,15 @@
         <form asp-action="Create" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="LanguageId" class="control-label">Dil</label>
+                <select asp-for="LanguageId" class="form-control">
+                    @foreach (var item in ViewData["Languages"] as IEnumerable<Language>)
+                    {
+                        <option value="@item.Id">@item.Value</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
                 <label asp-for="Location" class="control-label">Ünvan</label>
                 <input asp-for="Location" class="form-control" />
                 <span asp-validation-for="Location" class="text-danger"></span>

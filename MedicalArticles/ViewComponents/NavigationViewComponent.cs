@@ -16,9 +16,11 @@ namespace MedicalArticles.ViewComponents
         [HttpGet]
         public async Task<IViewComponentResult> InvokeAsync()
         {
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+
             NavigationViewModel viewModel = new NavigationViewModel()
             {
-                Adresses = _adressService.GetAll().Data,
+                Adresses = _adressService.GetDataByLanguage(currentLanguage).Data,
             };
             return View(viewModel);
         }

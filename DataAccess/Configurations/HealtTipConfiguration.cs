@@ -42,7 +42,7 @@ namespace DataAccess.Configurations
             builder.HasOne(h => h.Language)
                 .WithMany()
                 .HasForeignKey(h => h.LanguageId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.NoAction);
 
 
         }

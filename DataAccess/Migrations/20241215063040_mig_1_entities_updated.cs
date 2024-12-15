@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class mig_6_entities_updated : Migration
+    public partial class mig_1_entities_updated : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -341,8 +341,7 @@ namespace DataAccess.Migrations
                         name: "FK_HealtTips_Languages_LanguageId",
                         column: x => x.LanguageId,
                         principalTable: "Languages",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -480,8 +479,7 @@ namespace DataAccess.Migrations
                         name: "FK_TeamBoards_Languages_LanguageId",
                         column: x => x.LanguageId,
                         principalTable: "Languages",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(

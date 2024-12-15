@@ -251,7 +251,30 @@
                                 </a>
                             </div>
                         </li>
+                        <li>
+                            <div class="dropdown m-1">
+                                <button type="button" class="btn dropdown-toggle" style="background:white;" data-toggle="dropdown"> <i style="color:#0cb8b6; font-size:18px;" class="fa fa-globe"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="az-Latn" class="dropdown-item">
+                                            Azərbaycanca
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="dropdown-item">
+                                            English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="ru-RU" class="dropdown-item">
+                                            Русский
+                                        </a>
+                                    </li>
 
+                                </ul>
+
+                            </div>
+                        </li>
                     </ul>
 
                 </nav>
