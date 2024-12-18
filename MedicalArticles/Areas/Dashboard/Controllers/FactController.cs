@@ -8,21 +8,25 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
     public class FactController : Controller
     {
         private readonly IFactService _factService;
+        private readonly ILanguageService _languageService;
 
-        public FactController(IFactService factService)
+        public FactController(IFactService factService, ILanguageService languageService)
         {
             _factService = factService;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _factService.GetAll().Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _factService.GetDataByLanguage(currentLanguage).Data;
             return View(data);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             return View();
         }
 
@@ -32,6 +36,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
             var result = _factService.Add(dto);
             if (!result.IsSuccess)
             {
+                ViewData["Languages"] = _languageService.GetAll().Data;
                 ModelState.AddModelError("", result.Message);
                 return View(dto);
             }
@@ -42,6 +47,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var data = _factService.GetById(id).Data;
             return View(data);
         }

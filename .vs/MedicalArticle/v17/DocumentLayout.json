@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\areas\\dashboard\\views\\whychooseus\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\areas\\dashboard\\views\\whychooseus\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\areas\\dashboard\\controllers\\whychooseuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\areas\\dashboard\\controllers\\whychooseuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\areas\\dashboard\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\areas\\dashboard\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|c:\\users\\lenovo\\source\\repos\\medicalarticle\\medicalarticles\\areas\\dashboard\\controllers\\factcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{491E796A-80FB-45D5-9EF7-397AF05F5F18}|MedicalArticles\\MedicalArticles.csproj|solutionrelative:medicalarticles\\areas\\dashboard\\controllers\\factcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,41 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BlogController.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\BlogController.cs",
-              "RelativeDocumentMoniker": "MedicalArticles\\Areas\\Dashboard\\Controllers\\BlogController.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\BlogController.cs",
-              "RelativeToolTip": "MedicalArticles\\Areas\\Dashboard\\Controllers\\BlogController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAfAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MedicalArticles\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Controllers\\HomeController.cs*",
+              "RelativeToolTip": "MedicalArticles\\Controllers\\HomeController.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T16:48:29.346Z",
+              "WhenOpened": "2024-12-18T18:13:21.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "WhyChooseUsController.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\WhyChooseUsController.cs",
-              "RelativeDocumentMoniker": "MedicalArticles\\Areas\\Dashboard\\Controllers\\WhyChooseUsController.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\WhyChooseUsController.cs",
-              "RelativeToolTip": "MedicalArticles\\Areas\\Dashboard\\Controllers\\WhyChooseUsController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T17:28:56.446Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MedicalArticles\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "MedicalArticles\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAuwHUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-18T18:13:28.412Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Views\\WhyChooseUs\\Index.cshtml",
-              "RelativeDocumentMoniker": "MedicalArticles\\Areas\\Dashboard\\Views\\WhyChooseUs\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Views\\WhyChooseUs\\Index.cshtml",
-              "RelativeToolTip": "MedicalArticles\\Areas\\Dashboard\\Views\\WhyChooseUs\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T17:40:25.295Z",
+              "DocumentIndex": 2,
+              "Title": "FactController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\FactController.cs",
+              "RelativeDocumentMoniker": "MedicalArticles\\Areas\\Dashboard\\Controllers\\FactController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\Repos\\MedicalArticle\\MedicalArticles\\Areas\\Dashboard\\Controllers\\FactController.cs",
+              "RelativeToolTip": "MedicalArticles\\Areas\\Dashboard\\Controllers\\FactController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T18:46:48.165Z",
               "EditorCaption": ""
             }
           ]

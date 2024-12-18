@@ -10,5 +10,6 @@ namespace MedicalArticles.ViewModels
         public List<Service> Services { get; set; }
         public List<HealtTipDto> HealtTip{ get; set; }
         public List<TeamBoard> Teamboard { get; set; }
+        public List<Fact> Facts { get; set; }
     }
 }
