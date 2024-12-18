@@ -8,21 +8,24 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
     public class FaqController : Controller
     {
         private readonly IFaqService _faqService;
-
-        public FaqController(IFaqService faqService)
+        private readonly ILanguageService _languageService;
+        public FaqController(IFaqService faqService, ILanguageService languageService)
         {
             _faqService = faqService;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _faqService.GetAll().Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _faqService.GetDataByLanguage(currentLanguage).Data;
             return View(data);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             return View();
         }
 
@@ -32,6 +35,8 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
             var result = _faqService.Add(dto);
             if (!result.IsSuccess)
             {
+
+                ViewData["Languages"] = _languageService.GetAll().Data;
                 ModelState.AddModelError("", result.Message);
                 return View(dto);
             }
@@ -42,6 +47,8 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var data = _faqService.GetById(id).Data;
             return View(data);
         }
