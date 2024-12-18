@@ -1,6 +1,7 @@
 ﻿using Core.DataAccess.Concrete;
 using DataAccess.Abstract;
 using DataAccess.SqlServerDBContext;
+using Entities.Dtos;
 using Entities.TableModels;
 using Microsoft.EntityFrameworkCore;
 

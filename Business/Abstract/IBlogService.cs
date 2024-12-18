@@ -16,6 +16,6 @@ namespace Business.Abstract
         IResult SoftDelete(int id);
         IResult ReturnDeleted(int id);
         IDataResult<List<BlogDto>> GetServicesWithCategory();
-        IDataResult<List<Blog>> GetDataByLanguage(string lang);
+        IDataResult<List<BlogDto>> GetDataByLanguage(string lang);
     }
 }

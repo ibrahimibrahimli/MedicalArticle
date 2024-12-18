@@ -61,9 +61,9 @@ namespace Business.Concrete
             return new SuccessDataResult<Blog>(_blogDal.GetById(id));
         }
 
-        public IDataResult<List<Blog>> GetDataByLanguage(string lang)
+        public IDataResult<List<BlogDto>> GetDataByLanguage(string lang)
         {
-            return new SuccessDataResult<List<Blog>>(_blogDal.GetDataByLanguage(lang));
+            return new SuccessDataResult<List<BlogDto>>(_blogDal.GetDataByLanguage(lang));
         }
 
         public IDataResult<List<BlogDto>> GetServicesWithCategory()

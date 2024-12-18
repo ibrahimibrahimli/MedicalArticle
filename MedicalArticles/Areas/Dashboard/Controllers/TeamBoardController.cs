@@ -9,16 +9,19 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
     {
         private readonly ITeamBoardService _teamBoardService;
         private readonly IWebHostEnvironment _env;
+        private readonly ILanguageService _languageService;
 
-        public TeamBoardController(ITeamBoardService teamBoardService, IWebHostEnvironment env)
+        public TeamBoardController(ITeamBoardService teamBoardService, IWebHostEnvironment env, ILanguageService languageService)
         {
             _teamBoardService = teamBoardService;
             _env = env;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _teamBoardService.GetAll().Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _teamBoardService.GetDataByLanguage(currentLanguage).Data;
             return View(data);
         }
 
@@ -26,12 +29,14 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Create()
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             return View();
         }
 
         [HttpPost]
         public IActionResult Create(TeamBoardCreateDto dto, IFormFile photoUrl)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var result = _teamBoardService.Add(dto, photoUrl, _env.WebRootPath);
 
             if (!result.IsSuccess)
@@ -46,6 +51,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Edit(int id)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var data = _teamBoardService.GetById(id).Data;
             return View(data);
         }

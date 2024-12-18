@@ -34,14 +34,25 @@ namespace DataAccess.Concrete
                          };
             return [.. result];
         }
-        public List<Blog> GetDataByLanguage(string lang)
+        public List<BlogDto> GetDataByLanguage(string lang)
         {
-            var data = _context.Blogs
-                .Include(d => d.Language)
-                .Where(d => d.Language.Key == lang)
-                .Where(d => d.Deleted == 0);
+            var result = from blog in _context.Blogs
+                         .Include(blog => blog.Language)
+                         .Where(b => b.Language.Key == lang)
+                         .Where(b => b.Deleted == 0)
+                         join teamboard in _context.TeamBoards on blog.TeamboardId equals teamboard.Id
+                         select new BlogDto
+                         {
+                             Id = blog.Id,
+                             Title = blog.Title,
+                             Text = blog.Text,
+                             PhotoUrl = blog.PhotoUrl,
+                             IsHomePage = blog.IsHomePage,
+                             TeamboardName = teamboard.Name,
+                             TeamboardSurname = teamboard.Surname,
+                         };
 
-            return [.. data];
+            return [.. result];
         }
     }
 }

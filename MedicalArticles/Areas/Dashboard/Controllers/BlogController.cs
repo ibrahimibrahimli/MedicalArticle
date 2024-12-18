@@ -11,23 +11,27 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         private readonly IBlogService _blogService;
         private readonly IWebHostEnvironment _env;
         private readonly ITeamBoardService _teamBoardService;
+        private readonly ILanguageService _languageService;
 
-        public BlogController(IBlogService blogService, IWebHostEnvironment env, ITeamBoardService teamBoardService)
+        public BlogController(IBlogService blogService, IWebHostEnvironment env, ITeamBoardService teamBoardService, ILanguageService languageService)
         {
             _blogService = blogService;
             _env = env;
             _teamBoardService = teamBoardService;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _blogService.GetServicesWithCategory().Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _blogService.GetDataByLanguage(currentLanguage).Data;
             return View(data);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             ViewData["Teamboard"] = _teamBoardService.GetAll().Data;
             return View();
         }
@@ -39,6 +43,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
             if (!result.IsSuccess)
             {
                 ModelState.AddModelError("", result.Message);
+                ViewData["Languages"] = _languageService.GetAll().Data;
                 ViewData["Teamboard"] = _teamBoardService.GetAll().Data;
                 return View(dto);
             }
@@ -49,6 +54,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             ViewData["Teamboard"] = _teamBoardService.GetAll().Data;
             var data = _blogService.GetById(id).Data;
             return View(data);

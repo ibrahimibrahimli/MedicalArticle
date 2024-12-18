@@ -20,7 +20,8 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Index()
         {
-            var data = _aboutService.GetAll().Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _aboutService.GetDataByLanguage(currentLanguage).Data;
             return View(data);
         }
 
