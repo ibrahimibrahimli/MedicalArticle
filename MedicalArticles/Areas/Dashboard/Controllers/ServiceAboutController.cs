@@ -9,16 +9,19 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
     {
         private readonly IServiceAboutService _serviceAboutService;
         private readonly IWebHostEnvironment _env;
+        private readonly ILanguageService _languageService;
 
-        public ServiceAboutController(IServiceAboutService serviceAboutService, IWebHostEnvironment env)
+        public ServiceAboutController(IServiceAboutService serviceAboutService, IWebHostEnvironment env, ILanguageService languageService)
         {
             _serviceAboutService = serviceAboutService;
             _env = env;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _serviceAboutService.GetAll().Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _serviceAboutService.GetServiceAboutWithItems(currentLanguage).Data;
             ViewBag.ShowButton = data.Count == 0;
             return View(data);
         }
@@ -27,6 +30,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Create()
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             return View();
         }
 
@@ -37,6 +41,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
             if (!result.IsSuccess)
             {
+                ViewData["Languages"] = _languageService.GetAll().Data;
                 ModelState.AddModelError("", result.Message);
                 return View(dto);
             }
@@ -47,6 +52,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Edit(int id)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var data = _serviceAboutService.GetById(id).Data;
             return View(data);
         }

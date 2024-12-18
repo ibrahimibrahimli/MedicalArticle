@@ -16,10 +16,12 @@ namespace DataAccess.Concrete
             _context = context;
         }
 
-        public List<HealtTipDto> GetHealtTipsWithItems()
+        public List<HealtTipDto> GetHealtTipsWithItems(string lang)
         {
             var result = from healtTip in _context.HealtTips
-                         where healtTip.Deleted == 0
+                         .Include(r => r.Language)
+                         .Where(r => r.Language.Key == lang)
+                         .Where(r => r.Deleted == 0)
                          join healtTipItems in _context.HealtTipsItems on healtTip.Id equals healtTipItems.HealtTipId
                          into healtTipItemGroup
                          select new HealtTipDto
@@ -40,15 +42,6 @@ namespace DataAccess.Concrete
                              }).ToList()
                          };
             return [..result];
-        }
-        public List<HealtTip> GetDataByLanguage(string lang)
-        {
-            var data = _context.HealtTips
-                .Include(d => d.Language)
-                .Where(d => d.Language.Key == lang)
-                .Where(d => d.Deleted == 0);
-
-            return [.. data];
         }
     }
 }

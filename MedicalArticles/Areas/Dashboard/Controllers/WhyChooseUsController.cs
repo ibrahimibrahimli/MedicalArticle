@@ -9,16 +9,19 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
     {
         private readonly IWhyChooseUsService _whyChooseUsService;
         private readonly IWebHostEnvironment _env;
+        private readonly ILanguageService _languageService;
 
-        public WhyChooseUsController(IWhyChooseUsService whyChooseUsService, IWebHostEnvironment env)
+        public WhyChooseUsController(IWhyChooseUsService whyChooseUsService, IWebHostEnvironment env, ILanguageService languageService)
         {
             _whyChooseUsService = whyChooseUsService;
             _env = env;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _whyChooseUsService.GetAll().Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _whyChooseUsService.GetWhyUsWithItems(currentLanguage).Data;
             ViewBag.ShowButton = data.Count == 0;
             return View(data);
         }
@@ -27,6 +30,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Create()
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             return View();
         }
 
@@ -37,6 +41,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
             if (!result.IsSuccess)
             {
+                ViewData["Languages"] = _languageService.GetAll().Data;
                 ModelState.AddModelError("", result.Message);
                 return View(dto);
             }
@@ -47,6 +52,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Edit(int id)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var data = _whyChooseUsService.GetById(id).Data;
             return View(data);
         }

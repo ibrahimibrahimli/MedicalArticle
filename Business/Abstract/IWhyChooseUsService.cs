@@ -15,5 +15,6 @@ namespace Business.Abstract
         IDataResult<List<WhyChooseUs>> GetAllDeleted();
         IDataResult<WhyChooseUs> GetById(int id);
         IResult ReturnDeleted (int id);
+        IDataResult<List<WhyChooseUsDto>> GetWhyUsWithItems(string lang);
     }
 }

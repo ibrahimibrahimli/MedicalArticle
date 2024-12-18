@@ -9,17 +9,19 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
     {
         private readonly IHealtTipService _healtTipService;
         private readonly IWebHostEnvironment _env;
+        private readonly ILanguageService _languageService;
 
-        public HealtTipController(IHealtTipService healtTipService, IWebHostEnvironment env)
+        public HealtTipController(IHealtTipService healtTipService, IWebHostEnvironment env, ILanguageService languageService)
         {
             _healtTipService = healtTipService;
             _env = env;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _healtTipService.GetAll().Data;
-           // ViewBag.ShowButton = data.Count == 0;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _healtTipService.GetHealtTipsWithItems(currentLanguage).Data;
             return View(data);
         }
 
@@ -27,6 +29,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Create()
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             return View();
         }
 
@@ -37,6 +40,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
             if (!result.IsSuccess)
             {
+                ViewData["Languages"] = _languageService.GetAll().Data;
                 ModelState.AddModelError("", result.Message);
                 return View(dto);
             }
@@ -47,6 +51,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
         public IActionResult Edit(int id)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             var data = _healtTipService.GetById(id).Data;
             return View(data);
         }
@@ -59,6 +64,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
 
             if (!result.IsSuccess)
             {
+                ViewData["Languages"] = _languageService.GetAll().Data;
                 ModelState.AddModelError("", result.Message);
                 return View(dto);
             }

@@ -10,22 +10,26 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         private readonly IServiceService _service;
         private readonly IWebHostEnvironment _env;
         private readonly ICategoryService _categoryService;
-        public ServiceController(IServiceService service, IWebHostEnvironment webHostEnvironment, ICategoryService categoryService)
+        private readonly ILanguageService _languageService;
+        public ServiceController(IServiceService service, IWebHostEnvironment webHostEnvironment, ICategoryService categoryService, ILanguageService languageService)
         {
             _service = service;
             _env = webHostEnvironment;
             _categoryService = categoryService;
+            _languageService = languageService;
         }
 
         public IActionResult Index()
         {
-            var data = _service.GetAll().Data;
+            var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            var data = _service.GetDataByLanguage(currentLanguage).Data;
             return View(data);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             ViewData["Categories"] = _categoryService.GetAll().Data;
             return View();
         }
@@ -37,6 +41,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
             if (!result.IsSuccess)
             {
                 ModelState.AddModelError("", result.Message);
+                ViewData["Languages"] = _languageService.GetAll().Data;
                 ViewData["Categories"] = _categoryService.GetAll().Data;
                 return View(dto);
             }
@@ -47,6 +52,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            ViewData["Languages"] = _languageService.GetAll().Data;
             ViewData["Categories"] = _categoryService.GetAll().Data;
             var data = _service.GetById(id).Data;
             return View(data);

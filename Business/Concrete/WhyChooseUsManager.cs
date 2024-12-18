@@ -9,7 +9,6 @@ using Entities.Dtos;
 using Entities.TableModels;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Business.Concrete
 {
@@ -60,6 +59,11 @@ namespace Business.Concrete
         public IDataResult<WhyChooseUs> GetById(int id)
         {
             return new SuccessDataResult<WhyChooseUs>(_whyChooseUsDal.GetById(id));
+        }
+
+        public  IDataResult<List<WhyChooseUsDto>> GetWhyUsWithItems(string lang)
+        {
+            return new SuccessDataResult<List<WhyChooseUsDto>>(_whyChooseUsDal.GetWhyUsWithItems(lang));
         }
 
         public IResult HardDelete(int id)
