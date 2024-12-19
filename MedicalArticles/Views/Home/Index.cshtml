@@ -54,18 +54,21 @@
                     <!-- Single Item -->
                     @foreach (var item in Model.Services)
                     {
-                        <div class="item">
-                            <div class="info">
-                                <h4>
-                                    <a href="#">@item.Title</a>
-                                </h4>
-                                <div style="overflow:hidden; width:100px; height:100px; border-radius:100%; margin:auto;" class="overlay">
-                                    <img src="@item.PhotoUrl" alt="ServicesPhoto" />
+                        if(item.IsHomePage){
+                            <div class="item">
+                                <div class="info">
+                                    <h4>
+                                        <a href="#">@item.Title</a>
+                                    </h4>
+                                    <div style="overflow:hidden; width:100px; height:100px; border-radius:100%; margin:auto;" class="overlay">
+                                        <img src="@item.PhotoUrl" alt="ServicesPhoto" />
+                                    </div>
+                                    <p style="text-align:center;">@item.Description</p>
+                                    <a class="btn btn-theme border circle btn-md" href="#">Daha Çox</a>
                                 </div>
-                                <p style="text-align:center;">@item.Description</p>
-                                <a class="btn btn-theme border circle btn-md" href="#">Daha Çox</a>
                             </div>
-                        </div>
+                        }
+                        
                     }
                     <!-- End Single Item -->
                 </div>
@@ -126,7 +129,7 @@
 ============================================= -->
 <div class="fun-fact-area default-padding shadow light text-center bg-fixed text-light" style="background-image: url(assets/img/banner/2.jpg);">
     <div class="container">
-        <div class="row">
+        <div class="row" style="display:flex; justify-content:center;">
             @foreach (var item in Model.Facts)
             {
                 <div class="col-md-3 col-sm-6 item">
@@ -264,91 +267,35 @@
         <div class="row">
             <div class="blog-items">
                 <!-- Single Item -->
-                <div class="col-md-4 single-item">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="blog-single-right-sidebar.html">
-                                <img src="assets/img/blog/1.jpg" alt="Thumb">
-                                <div class="post-type">
-                                    <i class="fas fa-images"></i>
+                @foreach (var item in Model.Blogs)
+                {
+                    if(item.IsHomePage){
+                        <div class="col-md-4 single-item">
+                            <div class="item">
+                                <div class="thumb">
+                                    <a href="blog-single-right-sidebar.html">
+                                        <img src="@item.PhotoUrl" alt="Thumb">
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li><a href="#">Admin</a></li>
-                                    <li>15 June, 2019</li>
-                                </ul>
-                            </div>
-                            <h4>
-                                <a href="blog-single-right-sidebar.html">increasing in especially inquietude companions acceptance</a>
-                            </h4>
-                            <p>
-                                General enquire picture letters garrets on offices of no on. Say one hearing between excited evening all inhabit thought you.
-                            </p>
-                            <a class="btn btn-theme circle border btn-sm" href="blog-single-right-sidebar.html">Read More <i class="fas fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-md-4 single-item">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="blog-single-right-sidebar.html">
-                                <img src="assets/img/blog/2.jpg" alt="Thumb">
-                                <div class="post-type">
-                                    <i class="fas fa-video"></i>
+                                <div class="info">
+                                    <div class="meta">
+                                        <ul>
+                                            <li><a href="#">@item.TeamboardName @item.TeamboardSurname</a></li>
+                                            <li>@(item.CreatedDate.ToString("dd.MM.yyyy"))</li>
+                                        </ul>
+                                    </div>
+                                    <h4>
+                                        <a href="blog-single-right-sidebar.html">@(item.Title.Length > 200 ? item.Title.Substring(0, 200) + "..." : item.Title)</a>
+                                    </h4>
+                                    <p>
+                                        @(item.Text.Length > 300 ? item.Text.Substring(0, 300) + "..." : item.Text)
+                                    </p>
+                                    <a class="btn btn-theme circle border btn-sm" href="blog-single-right-sidebar.html">Read More <i class="fas fa-angle-right"></i></a>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li><a href="#">Admin</a></li>
-                                    <li>17 Auguest, 2019</li>
-                                </ul>
                             </div>
-                            <h4>
-                                <a href="blog-single-right-sidebar.html">Middleton as pretended listening he smallness perceived.</a>
-                            </h4>
-                            <p>
-                                General enquire picture letters garrets on offices of no on. Say one hearing between excited evening all inhabit thought you.
-                            </p>
-                            <a class="btn btn-theme circle border btn-sm" href="blog-single-right-sidebar.html">Read More <i class="fas fa-angle-right"></i></a>
                         </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-md-4 single-item">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="blog-single-right-sidebar.html">
-                                <img src="assets/img/blog/3.jpg" alt="Thumb">
-                                <div class="post-type">
-                                    <i class="fas fa-image"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li><a href="#">Admin</a></li>
-                                    <li>25 September, 2019</li>
-                                </ul>
-                            </div>
-                            <h4>
-                                <a href="blog-single-right-sidebar.html">Offended packages pleasant remainder recommend engrossed</a>
-                            </h4>
-                            <p>
-                                General enquire picture letters garrets on offices of no on. Say one hearing between excited evening all inhabit thought you.
-                            </p>
-                            <a class="btn btn-theme circle border btn-sm" href="blog-single-right-sidebar.html">Read More <i class="fas fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                    }
+                }
                 <!-- End Single Item -->
             </div>
         </div>

@@ -11,5 +11,6 @@ namespace MedicalArticles.ViewModels
         public List<HealtTipDto> HealtTip{ get; set; }
         public List<TeamBoard> Teamboard { get; set; }
         public List<Fact> Facts { get; set; }
+        public List<BlogDto> Blogs { get; set; }
     }
 }

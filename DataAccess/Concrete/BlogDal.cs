@@ -15,25 +15,6 @@ namespace DataAccess.Concrete
         {
             _context = context;
         }
-
-        public List<BlogDto> GetBlogWithAuthor()
-        {
-            var result = from blog in _context.Blogs
-                         where blog.Deleted == 0
-                         join teamboard in _context.TeamBoards on blog.TeamboardId equals teamboard.Id
-                         where teamboard.Deleted == 0
-                         select new BlogDto
-                         {
-                             Id = blog.Id,
-                             Title = blog.Title,
-                             Text = blog.Text,
-                             PhotoUrl = blog.PhotoUrl,
-                             IsHomePage = blog.IsHomePage,
-                             TeamboardName = teamboard.Name,
-                             TeamboardSurname = teamboard.Surname,
-                         };
-            return [.. result];
-        }
         public List<BlogDto> GetDataByLanguage(string lang)
         {
             var result = from blog in _context.Blogs
@@ -48,6 +29,8 @@ namespace DataAccess.Concrete
                              Text = blog.Text,
                              PhotoUrl = blog.PhotoUrl,
                              IsHomePage = blog.IsHomePage,
+                             CreatedDate= blog.CreatedDate,
+                             UpdatedDate = (DateTime)blog.UpdatedDate,
                              TeamboardName = teamboard.Name,
                              TeamboardSurname = teamboard.Surname,
                          };

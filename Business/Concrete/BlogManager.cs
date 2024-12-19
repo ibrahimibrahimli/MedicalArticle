@@ -66,11 +66,6 @@ namespace Business.Concrete
             return new SuccessDataResult<List<BlogDto>>(_blogDal.GetDataByLanguage(lang));
         }
 
-        public IDataResult<List<BlogDto>> GetServicesWithCategory()
-        {
-            return new SuccessDataResult<List<BlogDto>>(_blogDal.GetBlogWithAuthor());
-        }
-
         public IResult HardDelete(int id)
         {
             var model = GetById(id).Data;

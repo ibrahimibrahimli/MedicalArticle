@@ -13,6 +13,7 @@ namespace Entities.Dtos
         public string Title { get; set; }
         public string Text { get; set; }
         public bool IsHomePage { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
         public int TeamboardId { get; set; }
         public int LanguageId { get; set; }
 
@@ -25,6 +26,7 @@ namespace Entities.Dtos
                 Title = dto.Title,
                 Text = dto.Text,
                 IsHomePage = dto.IsHomePage,
+                CreatedDate = dto.CreatedDate,
                 TeamboardId = dto.TeamboardId,
                 LanguageId = dto.LanguageId,
             };

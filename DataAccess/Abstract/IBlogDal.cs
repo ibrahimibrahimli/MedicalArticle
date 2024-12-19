@@ -6,7 +6,6 @@ namespace DataAccess.Abstract
 {
     public interface IBlogDal : IBaseRepository<Blog>
     {
-        List<BlogDto> GetBlogWithAuthor();
         List<BlogDto> GetDataByLanguage(string lang);
     }
 }

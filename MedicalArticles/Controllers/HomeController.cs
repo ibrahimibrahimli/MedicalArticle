@@ -13,8 +13,9 @@ namespace MedicalArticles.Controllers
         private readonly IHealtTipService _healtTipService;
         private readonly ITeamBoardService _teamBoardService;
         private readonly IFactService _factService;
+        private readonly IBlogService _blogService;
 
-        public HomeController(ISlideService slideService, IServiceAboutItemsService aboutItemsService, IServiceService serviceService, ITeamBoardService teamBoardService, IServiceAboutService serviceAbout, IHealtTipService healtTipService, IFactService factService)
+        public HomeController(ISlideService slideService, IServiceAboutItemsService aboutItemsService, IServiceService serviceService, ITeamBoardService teamBoardService, IServiceAboutService serviceAbout, IHealtTipService healtTipService, IFactService factService, IBlogService blogService)
         {
             _slideService = slideService;
             _serviceService = serviceService;
@@ -22,6 +23,7 @@ namespace MedicalArticles.Controllers
             _serviceAbout = serviceAbout;
             _healtTipService = healtTipService;
             _factService = factService;
+            _blogService = blogService;
         }
 
         public IActionResult Index()
@@ -34,6 +36,7 @@ namespace MedicalArticles.Controllers
             var healtTipData = _healtTipService.GetHealtTipsWithItems(currentLanguage).Data;
             var teamboardData = _teamBoardService.GetDataByLanguage(currentLanguage).Data;
             var factData = _factService.GetDataByLanguage(currentLanguage).Data;
+            var blogData = _blogService.GetDataByLanguage(currentLanguage).Data;
 
             HomeViewModel viewModel = new HomeViewModel()
             {
@@ -42,7 +45,8 @@ namespace MedicalArticles.Controllers
                 Services = serviceData,
                 HealtTip = healtTipData,
                 Teamboard = teamboardData,
-                Facts = factData    
+                Facts = factData,
+                Blogs = blogData,
             };
 
             return View(viewModel);

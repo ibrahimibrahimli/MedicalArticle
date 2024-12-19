@@ -14,6 +14,7 @@
                         <tr>
                             <th>Başlıq</th>
                             <th>Açıqlama</th>
+                            <th>Ana Səhifə?</th>
                             <th>Şəkil</th>
                             <th></th>
                         </tr>
@@ -24,6 +25,7 @@
                             <tr>
                                 <td>@item.Title</td>
                                 <td title="@item.Description">@(item.Description.Length > 50? item.Description.Substring(0, 50) + "..." : item.Description)</td>
+                                <td>@(item.IsHomePage ? "Bəli" : "Xeyr")</td>
                                 <td><img src="@item.PhotoUrl" alt="About Photo" width="60px" /></td>
                                 <td class="d-flex justify-content-center">
                                     <a style="margin-right: 20px;" asp-action="Edit" asp-route-id="@item.Id">

@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public int Deleted { get; set; }
+        public bool IsHomePage { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public DateTime? UpdatedDate { get; set; }
     }
