@@ -120,7 +120,19 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="Faq" xml:space="preserve">
+    <value>Sual-Cavab</value>
+  </data>
+  <data name="Tips" xml:space="preserve">
+    <value>Sağlamlıq</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Ana səhifə</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Servis</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Team</value>
   </data>
 </root>

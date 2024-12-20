@@ -64,12 +64,12 @@
                             </p>
                         </div>
                         <ul>
-                            @foreach (var i in item.WhyChooseUsItems)
+                            @foreach (var items in item.WhyChooseUsItems)
                             {
                                 <li>
                                     <div class="info">
-                                        <h4>@i.Title</h4>
-                                        <p>@i.Description </p>
+                                        <h4>@items.Title</h4>
+                                        <p>@items.Description </p>
                                     </div>
                                 </li>
                             }
@@ -78,37 +78,44 @@
                 }
             </div>
             <!-- Start Faq -->
+            <!-- Start Faq -->
             <div class="col-md-6 faq-area">
                 <div class="heading">
-                    <h2>Answer & Questions</h2>
+                    <h2>@_localization.getKey("Faq").Value</h2>
                 </div>
                 <div class="acd-items acd-arrow">
                     <div class="panel-group symb" id="accordion">
-                        @foreach (var item in Model.Faqs)
-                        {
-                            <script>
-                                $(document).ready(function () {
-                                    $('#accordion .panel-collapse').on('show.bs.collapse', function () {
-                                        $('#accordion .panel-collapse.in').collapse('hide');
-                                    });
-                                });
-                            </script>
-                            <!-- Single Item -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#ac1">
-                                            @item.Question
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="ac1" class="panel-collapse collapse in">
-                                    <div class="panel-body">
-                                        <p>@item.Answer</p>
+
+                        @{
+                            var i = 1;
+
+                            @foreach (var item in Model.Faqs)
+                            {
+                                {
+                                    var idValue = $"ac{i}";
+                                    var hrefValue = $"#ac{i}";
+                                    <!-- Single Item -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href=@hrefValue>
+                                                    @item.Question
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id=@idValue class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p>
+                                                    @item.Answer
+                                                </p>
+
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- End Single Item -->
+                                    <!-- End Single Item -->
+                                    i++;
+                                }
+                            }
                         }
                     </div>
                 </div>
@@ -118,121 +125,3 @@
     </div>
 </div>
 <!-- End Why Chose Us -->
-<!-- Start Features
-============================================= -->
-<div class="features-area bg-gray default-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 appoinment">
-                <div class="appoinment-box">
-                    <div class="heading">
-                        <h4>Online Appoinment</h4>
-                        <h2>Make an Appointment</h2>
-                    </div>
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" id="f-name" name="f-name" placeholder="First Name" type="text">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" id="l-lname" name="l-lname" placeholder="Last Name" type="text">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" id="phone" name="phone" placeholder="Phone" type="text">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" id="date" name="date" placeholder="Appoinment Date" type="text">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <select>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                        <option value="3">Child</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <select>
-                                        <option value="1">Department</option>
-                                        <option value="2">Medecine</option>
-                                        <option value="4">Dental Care</option>
-                                        <option value="5">Traumatology</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group comments">
-                                    <textarea class="form-control" id="comments" name="comments" placeholder="Tell Us About Project *"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="submit" name="submit" id="submit">
-                                    Submit Query <i class="fa fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-6 features-items">
-                <ul>
-                    <li>
-                        <div class="icon">
-                            <i class="flaticon-tooth"></i>
-                        </div>
-                        <div class="info">
-                            <h4>Advanced Technology</h4>
-                            <p>
-                                Principle oh explained excellent do my suspected conveying in. Excellent you did therefore perfectly supposing described.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class="flaticon-medicine"></i>
-                        </div>
-                        <div class="info">
-                            <h4>Healthcare Solutions</h4>
-                            <p>
-                                Principle oh explained excellent do my suspected conveying in. Excellent you did therefore perfectly supposing described.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class="flaticon-first-aid-kit"></i>
-                        </div>
-                        <div class="info">
-                            <h4>Best Care </h4>
-                            <p>
-                                Principle oh explained excellent do my suspected conveying in. Excellent you did therefore perfectly supposing described.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class="flaticon-24-hours"></i>
-                        </div>
-                        <div class="info">
-                            <h4>24/7 Availability </h4>
-                            <p>
-                                Principle oh explained excellent do my suspected conveying in. Excellent you did therefore perfectly supposing described.
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Features -->

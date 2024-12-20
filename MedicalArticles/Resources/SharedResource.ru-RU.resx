@@ -120,7 +120,19 @@
   <data name="About" xml:space="preserve">
     <value>О нас</value>
   </data>
+  <data name="Faq" xml:space="preserve">
+    <value>Вопросы &amp; Oтветы</value>
+  </data>
+  <data name="Tips" xml:space="preserve">
+    <value>Рекомендации</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Главная</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Услуги</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Hаша Kоманда</value>
   </data>
 </root>

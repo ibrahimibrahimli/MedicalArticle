@@ -120,7 +120,19 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="Faq" xml:space="preserve">
+    <value>Questions &amp; Answers</value>
+  </data>
+  <data name="Tips" xml:space="preserve">
+    <value>Tips</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Our Team</value>
   </data>
 </root>

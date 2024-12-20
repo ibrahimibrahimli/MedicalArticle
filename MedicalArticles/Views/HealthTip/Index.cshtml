@@ -1,0 +1,50 @@
+﻿@model List<HealtTipDto>
+
+<div class="doctor-tips-area default-padding bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="site-heading text-center">
+                    <h2>@_localization.getKey("Tips").Value</span></h2>
+                    <p>
+                        While mirth large of on front. Ye he greater related adapted proceed entered an. Through it examine express promise no. Past add size game cold girl off how old
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="health-tips-items tips-carousel owl-carousel owl-theme">
+                <!-- Single Item -->
+                
+                @foreach (var item in Model )
+                {
+                    <div class="single-item">
+                        <div class="col-md-5">
+                            <div class="thumb">
+                                <img src="@item.PhotoUrl" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="info">
+                                <div class="doctor">
+                                    <h4>@item.Name @item.Surname</h4>
+                                    <h5>@item.Header</h5>
+                                </div>
+                                <h3>@item.Title</h3>
+                                <p>@item.Description</p>
+                                <h4>@item.SubTitle</h4>
+                                <ul>
+                                    @foreach (var i in item.HealtTipItems)
+                                    {
+                                        <li>@i.Text</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- End Single Item -->
+            </div>
+        </div>
+    </div>
+</div>
