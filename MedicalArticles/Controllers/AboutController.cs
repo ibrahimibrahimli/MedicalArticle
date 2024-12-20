@@ -31,7 +31,7 @@ namespace MedicalArticles.Controllers
                 WhyChooseUS = whyUsData,
                 Teamboards = teamboardData
             };
-            return View();
+            return View(aboutData);
         }
     }
 }

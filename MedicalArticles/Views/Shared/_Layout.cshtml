@@ -26,14 +26,6 @@
     <link href="~/assets/style.css" rel="stylesheet">
     <link href="~/assets/css/style.css" rel="stylesheet">
     <link href="~/assets/css/responsive.css" rel="stylesheet">
-    <!-- ========== End Stylesheet ========== -->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="assets/js/html5/html5shiv.min.js"></script>
-      <script src="assets/js/html5/respond.min.js"></script>
-    <![endif]-->
-    <!-- ========== Google Fonts ========== -->
     <link href="~/../../css?family=Open+Sans" rel="stylesheet">
     <link href="~/../../css-1?family=Poppins:300,500,600,700,800" rel="stylesheet">
 </head>
@@ -42,31 +34,6 @@
     @await Component.InvokeAsync("Navigation")
 
     
-    <!-- End Header -->
-    @* <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MedicalArticles</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Dashboard" asp-controller="Home" asp-action="index">Admin</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header> *@
             @RenderBody()
         
 
