@@ -135,4 +135,16 @@
   <data name="Team" xml:space="preserve">
     <value>Komandamız</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Əlaqə</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>Təcili zəng</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ünvan</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-Poçt</value>
+  </data>
 </root>
