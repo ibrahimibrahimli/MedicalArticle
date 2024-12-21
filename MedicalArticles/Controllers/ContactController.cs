@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Dtos;
+using MedicalArticles.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalArticles.Controllers
@@ -18,15 +19,39 @@ namespace MedicalArticles.Controllers
         public IActionResult Index()
         {
             var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
-            var data = _adressService.GetDataByLanguage(currentLanguage).Data;
-            return View(data);
+            var adressesData = _adressService.GetDataByLanguage(currentLanguage).Data;
+            ContactViewModel viewModel = new ContactViewModel()
+            {
+                Adresses = adressesData,
+            };
+            return View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult Create( ContactCreateDto dto)
+        //public IActionResult Create(ContactCreateDto dto)
+        //{
+        //    var result = _contactService.Add(dto);
+        //    if (!result.IsSuccess)
+        //    {
+        //        ModelState.AddModelError("", result.Message);
+        //        return View(dto);
+        //    }
+
+        //    return RedirectToAction("Index");
+        //}
+
+        public IActionResult Create(ContactCreateDto dto, string comments)
         {
-            _contactService.Add(dto);
-            return RedirectToAction("Index");
+            dto.Message = comments;
+            var result = _contactService.Add(dto);
+
+            if (!result.IsSuccess)
+            {
+                return Json(new { isSuccess = false });
+
+            }
+            return Json(new { isSuccess = true });
+
         }
     }
 }
