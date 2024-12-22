@@ -28,20 +28,8 @@ namespace MedicalArticles.Controllers
         }
 
         [HttpPost]
-        //public IActionResult Create(ContactCreateDto dto)
-        //{
-        //    var result = _contactService.Add(dto);
-        //    if (!result.IsSuccess)
-        //    {
-        //        ModelState.AddModelError("", result.Message);
-        //        return View(dto);
-        //    }
-
-        //    return RedirectToAction("Index");
-        //}
-
         public IActionResult Create(ContactCreateDto dto, string comments)
-        {
+       {
             dto.Message = comments;
             var result = _contactService.Add(dto);
 
