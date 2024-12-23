@@ -41,14 +41,14 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id) 
+        public IActionResult Edit(int id)
         {
             var data = _contactService.GetById(id).Data;
             return View(data);
         }
 
         [HttpPost]
-        public IActionResult Edit(ContactUpdateDto dto) 
+        public IActionResult Edit(ContactUpdateDto dto)
         {
             var result = _contactService.Update(dto);
             if (!result.IsSuccess)
@@ -66,7 +66,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
             var result = _contactService.SoftDelete(id);
             if (!result.IsSuccess)
                 return View(result);
-            
+
             return RedirectToAction("Index");
         }
 
