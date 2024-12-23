@@ -17,6 +17,7 @@ namespace MedicalArticles.Areas.Dashboard.Controllers
         public IActionResult Index()
         {
             var data = _contactService.GetAll().Data;
+            data.Reverse();
             return View(data);
         }
 

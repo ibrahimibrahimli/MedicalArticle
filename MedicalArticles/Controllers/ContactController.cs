@@ -28,9 +28,8 @@ namespace MedicalArticles.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(ContactCreateDto dto, string comments)
+        public IActionResult Create(ContactCreateDto dto)
        {
-            dto.Message = comments;
             var result = _contactService.Add(dto);
 
             if (!result.IsSuccess)
