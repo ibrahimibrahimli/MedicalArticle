@@ -159,4 +159,7 @@
   <data name="Message" xml:space="preserve">
     <value>Сообщение</value>
   </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Блог</value>
+  </data>
 </root>

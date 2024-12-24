@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241215072212_mig_2_Blog_updated")]
-    partial class mig_2_Blog_updated
+    [Migration("20241224193440_mig_1_created_tables")]
+    partial class mig_1_created_tables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -256,6 +256,9 @@ namespace DataAccess.Migrations
                         .HasMaxLength(3000)
                         .HasColumnType("nvarchar(3000)");
 
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
 
@@ -296,6 +299,9 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
 
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
@@ -358,14 +364,6 @@ namespace DataAccess.Migrations
                     b.Property<int>("TeamboardId")
                         .HasColumnType("int");
 
-                    b.Property<string>("TeamboardName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TeamboardSurname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasMaxLength(5000)
@@ -407,6 +405,9 @@ namespace DataAccess.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -440,6 +441,9 @@ namespace DataAccess.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("IsAnswered")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsHomePage")
                         .HasColumnType("bit");
 
                     b.Property<string>("Message")
@@ -487,6 +491,9 @@ namespace DataAccess.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
 
@@ -523,6 +530,9 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("Deleted")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
 
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
@@ -565,6 +575,9 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasMaxLength(3000)
                         .HasColumnType("nvarchar(3000)");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
 
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
@@ -620,6 +633,9 @@ namespace DataAccess.Migrations
                     b.Property<int>("HealtTipId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasMaxLength(1000)
@@ -648,6 +664,9 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("Deleted")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Key")
                         .IsRequired()
@@ -688,6 +707,9 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
 
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
@@ -732,6 +754,9 @@ namespace DataAccess.Migrations
                         .HasMaxLength(3000)
                         .HasColumnType("nvarchar(3000)");
 
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
 
@@ -767,6 +792,9 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("Deleted")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
 
                     b.Property<int>("ServiceAboutId")
                         .HasColumnType("int");
@@ -804,6 +832,9 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("Deleted")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
 
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
@@ -851,6 +882,9 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
 
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
@@ -963,6 +997,9 @@ namespace DataAccess.Migrations
                         .HasMaxLength(3000)
                         .HasColumnType("nvarchar(3000)");
 
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
 
@@ -998,6 +1035,9 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasMaxLength(3000)
                         .HasColumnType("nvarchar(3000)");
+
+                    b.Property<bool>("IsHomePage")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Title")
                         .IsRequired()

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class mig_1_entities_updated : Migration
+    public partial class mig_1_created_tables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -64,6 +64,7 @@ namespace DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     IconName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -84,6 +85,7 @@ namespace DataAccess.Migrations
                     Message = table.Column<string>(type: "nvarchar(4000)", maxLength: 4000, nullable: false),
                     IsAnswered = table.Column<bool>(type: "bit", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -101,6 +103,7 @@ namespace DataAccess.Migrations
                     Key = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Value = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -226,6 +229,7 @@ namespace DataAccess.Migrations
                     PhotoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -253,6 +257,7 @@ namespace DataAccess.Migrations
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -278,6 +283,7 @@ namespace DataAccess.Migrations
                     Counter = table.Column<int>(type: "int", nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -302,6 +308,7 @@ namespace DataAccess.Migrations
                     Answer = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -331,6 +338,7 @@ namespace DataAccess.Migrations
                     PhotoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -355,6 +363,7 @@ namespace DataAccess.Migrations
                     PhotoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -381,6 +390,7 @@ namespace DataAccess.Migrations
                     PhotoUrl = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -412,6 +422,7 @@ namespace DataAccess.Migrations
                     PhotoUrl = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -439,6 +450,7 @@ namespace DataAccess.Migrations
                     TwitterUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -492,6 +504,7 @@ namespace DataAccess.Migrations
                     PhotoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -515,6 +528,7 @@ namespace DataAccess.Migrations
                     HealtTipId = table.Column<int>(type: "int", nullable: false),
                     Text = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -538,6 +552,7 @@ namespace DataAccess.Migrations
                     ServiceAboutId = table.Column<int>(type: "int", nullable: false),
                     Text = table.Column<string>(type: "nvarchar(3000)", maxLength: 3000, nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -595,6 +610,7 @@ namespace DataAccess.Migrations
                     Title = table.Column<string>(type: "nvarchar(3000)", maxLength: 3000, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(3000)", maxLength: 3000, nullable: false),
                     Deleted = table.Column<int>(type: "int", nullable: false),
+                    IsHomePage = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
