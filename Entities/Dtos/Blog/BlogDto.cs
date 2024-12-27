@@ -17,7 +17,7 @@ namespace Entities.Dtos
         public string TeamboardName { get; set; }
         public string TeamboardSurname { get; set; }
         public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
         public int TeamboardId { get; set; }
         public int LanguageId { get; set; }
     }
