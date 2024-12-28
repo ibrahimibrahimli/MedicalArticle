@@ -4,7 +4,6 @@ using Core.Extension;
 using Core.Results.Abstract;
 using Core.Results.Concrete;
 using DataAccess.Abstract;
-using DataAccess.Concrete;
 using Entities.Dtos;
 using Entities.TableModels;
 using FluentValidation;
@@ -58,12 +57,17 @@ namespace Business.Concrete
 
         public IDataResult<Blog> GetById(int id)
         {
-            return new SuccessDataResult<Blog>(_blogDal.GetById(id));
+            throw new NotImplementedException();
         }
 
         public IDataResult<List<BlogDto>> GetDataByLanguage(string lang)
         {
             return new SuccessDataResult<List<BlogDto>>(_blogDal.GetDataByLanguage(lang));
+        }
+
+        public IDataResult<BlogDto> GetDtoById(int id, string lang)
+        {
+            return new SuccessDataResult<BlogDto>(_blogDal.GetDtoById(id, lang));
         }
 
         public IResult HardDelete(int id)

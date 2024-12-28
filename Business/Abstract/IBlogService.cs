@@ -12,6 +12,7 @@ namespace Business.Abstract
         IDataResult<List<Blog>> GetAll();
         IDataResult<List<Blog>> GetAllDeleted();
         IDataResult<Blog> GetById(int id);
+        IDataResult<BlogDto> GetDtoById(int id, string lang);
         IResult HardDelete(int id);
         IResult SoftDelete(int id);
         IResult ReturnDeleted(int id);

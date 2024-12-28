@@ -21,4 +21,5 @@ namespace Entities.Dtos
         public int TeamboardId { get; set; }
         public int LanguageId { get; set; }
     }
+
 }

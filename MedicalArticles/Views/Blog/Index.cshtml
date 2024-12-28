@@ -42,9 +42,9 @@
                                     <a href="blog-single-right-sidebar.html">@item.Title</a>
                                 </h3>
                                 <p>
-                                    @item.Text
+                                    @(item.Text.Length > 200 ? item.Text.Substring(0,200) + "..." : item.Text);
                                 </p>
-                                <a class="btn btn-theme circle border btn-sm" href="blog-single-right-sidebar.html">Read More <i class="fas fa-angle-right"></i></a>
+                                <a class="btn btn-theme circle border btn-sm" asp-route-id="@item.Id" asp-action="">Read More <i class="fas fa-angle-right"></i></a>
                             </div>
                         </div>
                         <!-- End Single Item -->
