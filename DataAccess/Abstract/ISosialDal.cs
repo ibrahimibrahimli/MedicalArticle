@@ -10,6 +10,5 @@ namespace DataAccess.Abstract
 {
     public interface ISosialDal : IBaseRepository<Sosial>
     {
-        List<Sosial> GetDataByLanguage(string lang);
     }
 }

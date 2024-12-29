@@ -19,6 +19,5 @@ namespace Business.Abstract
         IResult SoftDelete(int id);
         IResult Update(SosialUpdateDto dto);
         IResult ReturnDeleted(int id);
-        IDataResult<List<Sosial>> GetDataByLanguage(string lang);
     }
 }

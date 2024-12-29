@@ -14,7 +14,6 @@ namespace Entities.Dtos
         public string InstagramUrl { get; set; }
         public string Telegram { get; set; }
         public string TwitterUrl { get; set; }
-        public int LanguageId { get; set; }
 
         public static Sosial ToSosial(SosialCreateDto dto)
         {
@@ -25,7 +24,6 @@ namespace Entities.Dtos
                 InstagramUrl = dto.InstagramUrl,
                 Telegram = dto.TwitterUrl,
                 TwitterUrl = dto.TwitterUrl,
-                LanguageId = dto.LanguageId,
             };
             return sosial;
         }

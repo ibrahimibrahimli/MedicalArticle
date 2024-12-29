@@ -57,11 +57,6 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Sosial>(_sosialDal.GetById(id));
         }
-
-        public IDataResult<List<Sosial>> GetDataByLanguage(string lang)
-        {
-            return new SuccessDataResult<List<Sosial>>(_sosialDal.GetDataByLanguage(lang));
-        }
         public IResult HardDelete(int id)
         {
             Sosial model = GetById(id).Data;

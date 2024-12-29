@@ -19,15 +19,5 @@ namespace DataAccess.Concrete
         {
             _context = context;
         }
-
-        public List<Sosial> GetDataByLanguage(string lang)
-        {
-            var data = _context.Sosials
-                .Include(d => d.Language)
-                .Where(d => d.Language.Key == lang)
-                .Where(d => d.Deleted == 0);
-
-            return [.. data];
-        }
     }
 }
