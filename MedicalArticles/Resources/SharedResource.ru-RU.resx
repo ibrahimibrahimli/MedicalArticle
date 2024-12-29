@@ -162,4 +162,13 @@
   <data name="Blog" xml:space="preserve">
     <value>Блог</value>
   </data>
+  <data name="RecentPost" xml:space="preserve">
+    <value>Недавний пост</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Читать далее</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Подписывайтесь на нас</value>
+  </data>
 </root>

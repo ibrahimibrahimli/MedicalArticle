@@ -24,7 +24,7 @@
                         <!-- Single Item -->
                         <div class="single-item item">
                             <div class="thumb">
-                                <a href="blog-single-right-sidebar.html">
+                                <a asp-route-id="@item.Id" asp-action="Details">
                                     <img src="@item.PhotoUrl" alt="Thumb">
                                     <div class="post-type">
                                         <i class="fas fa-images"></i>
@@ -34,17 +34,17 @@
                             <div class="info">
                                 <div class="meta">
                                     <ul>
-                                        <li><a href="#">@item.TeamboardName @item.TeamboardSurname</a></li>
+                                        <li><a >@item.TeamboardName @item.TeamboardSurname</a></li>
                                         <li>@item.CreatedDate.ToString("dd.MM.yyyy")</li>
                                     </ul>
                                 </div>
                                 <h3>
-                                    <a href="blog-single-right-sidebar.html">@item.Title</a>
+                                    <a asp-route-id="@item.Id" asp-action="Details">@item.Title</a>
                                 </h3>
                                 <p>
                                     @(item.Text.Length > 200 ? item.Text.Substring(0,200) + "..." : item.Text);
                                 </p>
-                                <a class="btn btn-theme circle border btn-sm" asp-route-id="@item.Id" asp-action="">Read More <i class="fas fa-angle-right"></i></a>
+                                <a class="btn btn-theme circle border btn-sm" asp-route-id="@item.Id" asp-action="Details">@_localization.getKey("ReadMore").Value <i class="fas fa-angle-right"></i></a>
                             </div>
                         </div>
                         <!-- End Single Item -->
@@ -56,7 +56,7 @@
                     <aside>
                         <div class="sidebar-item recent-post">
                             <div class="title">
-                                <h4>Recent Post</h4>
+                                <h4>@_localization.getKey("RecentPost").Value</h4>
                             </div>
                             <ul>
                                 @foreach (var item in Model.Blogs)

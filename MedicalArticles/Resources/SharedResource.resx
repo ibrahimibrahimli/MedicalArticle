@@ -162,4 +162,13 @@
   <data name="Blog" xml:space="preserve">
     <value>Blog</value>
   </data>
+  <data name="RecentPost" xml:space="preserve">
+    <value>Recent Post</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Follow Us</value>
+  </data>
 </root>

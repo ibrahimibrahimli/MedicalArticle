@@ -162,4 +162,13 @@
   <data name="Blog" xml:space="preserve">
     <value>Bloq</value>
   </data>
+  <data name="RecentPost" xml:space="preserve">
+    <value>Son Postlar</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Daha çox oxu</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Bizi izlə</value>
+  </data>
 </root>
