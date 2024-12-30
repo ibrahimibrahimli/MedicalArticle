@@ -36,6 +36,7 @@ namespace MedicalArticles.Controllers
             var blogData = _blogService.GetDtoById(id, currentLanguage).Data;
             var sosialdata = _sosialService.GetAll().Data;
             var blogsData = _blogService.GetDataByLanguage(currentLanguage).Data;
+            blogsData.Reverse();
 
             BlogDetailsViewModel viewModel = new BlogDetailsViewModel
             {
