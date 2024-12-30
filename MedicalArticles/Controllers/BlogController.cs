@@ -1,6 +1,4 @@
 ﻿using Business.Abstract;
-using Entities.Dtos;
-using MedicalArticles.Services;
 using MedicalArticles.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,10 +34,17 @@ namespace MedicalArticles.Controllers
         {
             var currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
             var blogData = _blogService.GetDtoById(id, currentLanguage).Data;
+            var sosialdata = _sosialService.GetAll().Data;
+            var blogsData = _blogService.GetDataByLanguage(currentLanguage).Data;
 
-            ViewData["Sosial"] = _sosialService.GetAll().Data;
+            BlogDetailsViewModel viewModel = new BlogDetailsViewModel
+            {
+                Blog = blogData, 
+               Sosials = sosialdata,
+               Blogs = blogsData
+            };
 
-            return View(blogData);
+            return View(viewModel);
         }
     }
 }

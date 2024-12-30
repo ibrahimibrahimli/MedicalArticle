@@ -1,4 +1,4 @@
-﻿@model BlogDto
+﻿@model BlogDetailsViewModel
 <!-- Start Breadcrumb 
     ============================================= -->
     <div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(~/assets/img/banner/8.jpg);">
@@ -27,7 +27,7 @@
 
                             <!-- Start Post Thumb -->
                             <div class="thumb">
-                                <img src="@Model.PhotoUrl" alt="Thumb">
+                                <img src="@Model.Blog.PhotoUrl" alt="Thumb">
                                 <div class="post-type">
                                     <i class="fas fa-images"></i>
                                 </div>
@@ -37,13 +37,13 @@
                             <div class="info">
                                 <div class="meta">
                                     <ul>
-                                        <li><a href="#">@Model.TeamboardName @Model.TeamboardSurname</a></li>
-                                        <li>@Model.CreatedDate.ToString("dd.MM.yyyy")</li>
+                                    <li><a href="#">@Model.Blog.TeamboardName @Model.Blog.TeamboardSurname</a></li>
+                                    <li>@Model.Blog.CreatedDate.ToString("dd.MM.yyyy")</li>
                                     </ul>
                                 </div>
-                                <h3>@Model.Title</h3>
+                            <h3>@Model.Blog.Title</h3>
                                 <p>
-                                @Model.Text
+                                @Model.Blog.Text
                                 </p>
 
                                 <!-- Start Comments Form -->
@@ -130,11 +130,8 @@
                                 <h4>@_localization.getKey("RecentPost").Value</h4>
                             </div>
                             <ul>
-                                @foreach (var item in ViewData["Languages"] as IEnumerable<Language>)
-                                {
-
-                                }
-                                @foreach (var item in Model)
+                                
+                                @foreach (var item in Model.Blogs)
                                 {
                                     <li>
                                         <div class="thumb">
@@ -187,7 +184,6 @@
                                             </a>
                                         </li>
                                     </ul>
-
                                 }
                             </div>
                         </div>
