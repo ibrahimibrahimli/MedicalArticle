@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
 {
-    public class ServiceAboutDal : BaseRepository<ServiceAbout, ApplicationDbContext>, IServiceAboutDal
+    public class ServiceAboutDal : IBaseRepository<ServiceAbout, ApplicationDbContext>, IServiceAboutDal
     {
         private readonly ApplicationDbContext? _context;
 

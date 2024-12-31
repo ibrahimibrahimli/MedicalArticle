@@ -5,7 +5,7 @@ using Entities.TableModels;
 
 namespace DataAccess.Concrete
 {
-    public class LanguageDal : BaseRepository<Language, ApplicationDbContext>, ILanguageDal
+    public class LanguageDal : IBaseRepository<Language, ApplicationDbContext>, ILanguageDal
     {
     }
 }

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
 {
-    public class HealtTipItemsDal : BaseRepository<HealtTipItems, ApplicationDbContext>, IHealtTipItemsDal
+    public class HealtTipItemsDal : IBaseRepository<HealtTipItems, ApplicationDbContext>, IHealtTipItemsDal
     {
         private readonly ApplicationDbContext? _context;
 

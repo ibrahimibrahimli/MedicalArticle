@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
 {
-    public class FactDal : BaseRepository<Fact, ApplicationDbContext>, IFactDal
+    public class FactDal : IBaseRepository<Fact, ApplicationDbContext>, IFactDal
     {
         private readonly ApplicationDbContext? _context;
 

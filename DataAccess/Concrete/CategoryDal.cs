@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
-    public class CategoryDal : BaseRepository<Category, ApplicationDbContext>, ICategoryDal
+    public class CategoryDal : IBaseRepository<Category, ApplicationDbContext>, ICategoryDal
     {
     }
 }

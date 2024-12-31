@@ -5,7 +5,7 @@ using Entities.TableModels;
 
 namespace DataAccess.Concrete
 {
-    public class ContactDal  :BaseRepository<Contact, ApplicationDbContext> ,IContactDal
+    public class ContactDal  : IBaseRepository<Contact, ApplicationDbContext> ,IContactDal
     {
     }
 }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
-    public class SosialDal: BaseRepository<Sosial, ApplicationDbContext>, ISosialDal
+    public class SosialDal: IBaseRepository<Sosial, ApplicationDbContext>, ISosialDal
     {
         private readonly ApplicationDbContext? _context;
 

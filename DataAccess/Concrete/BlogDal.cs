@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
 {
-    public class BlogDal : BaseRepository<Blog, ApplicationDbContext>, IBlogDal
+    public class BlogDal : IBaseRepository<Blog, ApplicationDbContext>, IBlogDal
     {
         private readonly ApplicationDbContext? _context;
 

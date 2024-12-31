@@ -3,7 +3,7 @@ using Entities.TableModels;
 
 namespace DataAccess.Abstract
 {
-    public interface IContactDal: IBaseRepository<Contact>
+    public interface ICommentDal : IBaseRepository<Comment>
     {
     }
 }

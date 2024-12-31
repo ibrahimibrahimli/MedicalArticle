@@ -1,18 +1,19 @@
-﻿namespace Entities.TableModels
+﻿using Core.Entities.Abstract;
+
+namespace Entities.TableModels
 {
-    public class Comment
+    public class Comment : BaseEntity
     {
-        public int Id { get; set; }
         public int BlogId { get; set; }
         public int? ParentCommentId { get; set; }
-        public int UserName { get; set; }
-        public int UserSurname { get; set; }
-        public string Content { get; set; }
-        public DateTime CreatedDate { get; set; } 
+        public string UserName { get; set; }
+        public string UserSurname { get; set; }
+        public  string Content { get; set; }
+        public List<Comment> Replies { get; set; } = [];
 
         // Navigation properties
         public Blog Blog { get; set; }
-        public List<Comment> Replies { get; set; } = new List<Comment>();
+        public Comment ParentComment { get; set; }
     }
 
 }

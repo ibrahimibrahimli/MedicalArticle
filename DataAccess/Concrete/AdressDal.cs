@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
-    public class AdressDal : BaseRepository<Adress, ApplicationDbContext> ,IAdressDal
+    public class AdressDal : IBaseRepository<Adress, ApplicationDbContext> ,IAdressDal
     {
         private readonly ApplicationDbContext? _context;
 

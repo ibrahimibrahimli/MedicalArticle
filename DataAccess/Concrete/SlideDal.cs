@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
-    public class SlideDal : BaseRepository<Slide, ApplicationDbContext>, ISlideDal
+    public class SlideDal : IBaseRepository<Slide, ApplicationDbContext>, ISlideDal
 
     {
         private readonly ApplicationDbContext? _context;

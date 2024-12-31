@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
 {
-    public class WhyChooseUsDal : BaseRepository<WhyChooseUs, ApplicationDbContext>, IWhyChooseUsDal
+    public class WhyChooseUsDal : IBaseRepository<WhyChooseUs, ApplicationDbContext>, IWhyChooseUsDal
     {
         private readonly ApplicationDbContext? _context;
 

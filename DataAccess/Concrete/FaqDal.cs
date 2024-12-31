@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
-    public class FaqDal : BaseRepository<Faq, ApplicationDbContext> ,IFaqDal 
+    public class FaqDal : IBaseRepository<Faq, ApplicationDbContext> ,IFaqDal 
     {
         private readonly ApplicationDbContext? _context;
 

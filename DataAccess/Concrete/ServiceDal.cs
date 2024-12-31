@@ -6,7 +6,7 @@ using Entities.TableModels;
 using Microsoft.EntityFrameworkCore;
 namespace DataAccess.Concrete
 {
-    public class ServiceDal : BaseRepository<Service, ApplicationDbContext>, IServiceDal
+    public class ServiceDal : IBaseRepository<Service, ApplicationDbContext>, IServiceDal
     {
         private readonly ApplicationDbContext _context;
 

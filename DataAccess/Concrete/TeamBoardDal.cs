@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
 {
-    public class TeamBoardDal : BaseRepository<TeamBoard, ApplicationDbContext>, ITeamBoardDal
+    public class TeamBoardDal : IBaseRepository<TeamBoard, ApplicationDbContext>, ITeamBoardDal
     {
         private readonly ApplicationDbContext? _context;
 

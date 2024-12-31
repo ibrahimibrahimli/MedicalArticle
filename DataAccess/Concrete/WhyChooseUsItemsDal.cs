@@ -6,7 +6,7 @@ using Entities.TableModels;
 
 namespace DataAccess.Concrete
 {
-    public class WhyChooseUsItemsDal : BaseRepository<WhyChooseUsItems, ApplicationDbContext>, IWhyChooseUsItemsDal
+    public class WhyChooseUsItemsDal : IBaseRepository<WhyChooseUsItems, ApplicationDbContext>, IWhyChooseUsItemsDal
     {
         private readonly ApplicationDbContext? _context;
 
