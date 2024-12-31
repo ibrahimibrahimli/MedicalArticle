@@ -35,6 +35,10 @@ namespace Business.Extensions
             services.AddScoped<IContactService, ContactManager>();
             services.AddScoped<IValidator<Contact>, ContactValidation>();
 
+            services.AddScoped<ICommentDal, CommentDal>();
+            services.AddScoped<ICommentService, CommentManager>();
+            services.AddScoped<IValidator<Comment>, CommentValidation>();
+
             services.AddScoped<IFaqDal, FaqDal>();
             services.AddScoped<IFaqService, FaqManager>();
             services.AddScoped<IValidator<Faq>, FaqValidation>();
