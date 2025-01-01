@@ -6,6 +6,6 @@ namespace DataAccess.Abstract
 {
     public interface ICommentDal : IBaseRepository<Comment>
     {
-        List<CommentDto> GetCommentsByBlogId(int blogId);
+        List<Comment> GetCommentsByBlogId(int blogId);
     }
 }

@@ -17,22 +17,12 @@ namespace DataAccess.Concrete
             _context = context;
         }
 
-        public List<CommentDto> GetCommentsByBlogId(int blogId)
+        public List<Comment> GetCommentsByBlogId(int blogId)
         {
-            var result = _context.Comments
+            return  _context.Comments
                 .Where(c => c.BlogId == blogId && c.ParentCommentId == null)
-                .Include(c => c.Replies);
-
-
-            return [.. result.Select(c => new CommentDto
-            {
-                BlogId = c.BlogId,
-                ParentCommentId = c.ParentCommentId,
-                UserName = c.UserName,
-                UserSurname = c.UserSurname,
-                Content = c.Content,
-                Replies = c.Replies
-            })];
+                .Include(c => c.Replies)
+                .ThenInclude(r => r.Replies).ToList();
         }
     }
 }

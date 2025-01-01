@@ -1,5 +1,5 @@
 ﻿@model BlogDetailsViewModel
-<!-- Start Breadcrumb 
+<!-- Start Breadcrumb
 ============================================= -->
 <div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(assets/img/banner/8.jpg);">
     <div class="container">
@@ -14,7 +14,6 @@
     </div>
 </div>
 <!-- End Breadcrumb -->
-
 <!-- Start Blog
 ============================================= -->
 <div class="blog-area single full-blog left-sidebar default-padding">
@@ -52,7 +51,18 @@
                                     <h4>
                                         @Model.Comments.Count()
                                     </h4>
-                                    @foreach(var comment in Model.Comments){
+                                    @if (Model.Comments != null && Model.Comments.Any())
+                                    {
+                                        @foreach (var comment in Model.Comments.Where(c => c.ParentCommentId == null))
+                                        {
+                                            @Html.Partial("_CommentPartial", comment)
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p>Hələ rəy yoxdur. İlk rəy yazan siz olun!</p>
+                                    }
+                                    @* @foreach(var comment in Model.Comments){
 
                                         <div class="comments-list">
                                             <div class="commen-item">
@@ -82,47 +92,48 @@
                                                 </div>
                                             }
                                         </div>
-                                        }
+                                        } *@
+                                </div>
+                                <div class="comments-form">
+                                    <div class="title">
+                                        <h4>Leave a comments</h4>
                                     </div>
-                                    <div class="comments-form">
-                                        <div class="title">
-                                            <h4>Leave a comments</h4>
-                                        </div>
-                                        <form action="#" class="contact-comments">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <!-- Name -->
-                                                        <input name="name" class="form-control" placeholder="Name *" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <!-- Email -->
-                                                        <input name="email" class="form-control" placeholder="Email *" type="email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group comments">
-                                                        <!-- Comment -->
-                                                        <textarea class="form-control" placeholder="Comment"></textarea>
-                                                    </div>
-                                                    <div class="form-group full-width submit">
-                                                        <button type="submit">
-                                                            Post Comments
-                                                        </button>
-                                                    </div>
+                                    <form asp-action="AddComment" class="contact-comments">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <!-- Name -->
+                                                    <input name="name" class="form-control" placeholder="Name *" type="text">
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <!-- Email -->
+                                                    <input name="email" class="form-control" placeholder="Email *" type="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group comments">
+                                                    <!-- Comment -->
+                                                    <textarea class="form-control" placeholder="Comment"></textarea>
+                                                </div>
+                                                <div class="form-group full-width submit">
+                                                    <button type="submit">
+                                                        Post Comments
+                                                    </button>
+                                                    <input type="hidden" name="blogId" value="@Model.Blog.Id" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <!-- End Comments Form -->
                             </div>
+                            <!-- End Comments Form -->
                         </div>
                     </div>
+                </div>
 
-                    <!-- Start Sidebar -->
+                <!-- Start Sidebar -->
                 <!-- Start Sidebar -->
                 <div class="sidebar col-md-4">
                     <aside>
@@ -131,7 +142,7 @@
                                 <h4>@_localization.getKey("RecentPost").Value</h4>
                             </div>
                             <ul>
-                                
+
                                 @foreach (var item in Model.Blogs)
                                 {
                                     <li>
@@ -190,11 +201,9 @@
                         </div>
                     </aside>
                 </div>
-                    <!-- End Start Sidebar -->
-                </div>
+                <!-- End Start Sidebar -->
             </div>
         </div>
     </div>
-    <!-- End Blog -->
-
-   
+</div>
+<!-- End Blog -->

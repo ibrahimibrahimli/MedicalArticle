@@ -54,9 +54,9 @@ namespace Business.Concrete
             return new SuccessDataResult<Comment>(_commentDal.GetById(id));
         }
 
-        public IDataResult<List<CommentDto>> GetCommentsByBlogId(int blogId)
+        public IDataResult<List<Comment>> GetCommentsByBlogId(int blogId)
         {
-            return new SuccessDataResult<List<CommentDto>>(_commentDal.GetCommentsByBlogId(blogId));
+            return new SuccessDataResult<List<Comment>>(_commentDal.GetCommentsByBlogId(blogId));
         }
     }
 }

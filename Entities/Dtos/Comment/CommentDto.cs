@@ -4,6 +4,7 @@ namespace Entities.Dtos
 {
     public class CommentDto
     {
+        public int Id { get; set; }
         public int BlogId { get; set; }
         public int? ParentCommentId { get; set; }
         public string UserName { get; set; }
@@ -16,6 +17,7 @@ namespace Entities.Dtos
         {
             return new Comment
             {
+                Id = commentUpdateDto.Id,
                 BlogId = commentUpdateDto.BlogId,
                 ParentCommentId = commentUpdateDto.ParentCommentId,
                 UserName = commentUpdateDto.UserName,
