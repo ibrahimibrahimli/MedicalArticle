@@ -6,7 +6,10 @@ namespace Business.Abstract
 {
     public interface ICommentService
     {
+        
+        IDataResult<List<CommentDto>> GetCommentsByBlogId(int blogId);
         IResult Add(CommentCreateDto dto);
+        IResult Delete(int id);
         IDataResult<Comment> GetById(int id);
     }
 }

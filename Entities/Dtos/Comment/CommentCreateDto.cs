@@ -9,7 +9,6 @@ namespace Entities.Dtos
         public string UserName { get; set; }
         public string UserSurname { get; set; }
         public required string Content { get; set; }
-        public List<Comment> Replies { get; set; } = [];
 
         public static Comment ToComment(CommentCreateDto commentCreateDto)
         {
@@ -19,8 +18,7 @@ namespace Entities.Dtos
                 ParentCommentId = commentCreateDto.ParentCommentId,
                 UserName = commentCreateDto.UserName,
                 UserSurname = commentCreateDto.UserSurname,
-                Content = commentCreateDto.Content,
-                Replies = commentCreateDto.Replies
+                Content = commentCreateDto.Content
             };
         }
     }

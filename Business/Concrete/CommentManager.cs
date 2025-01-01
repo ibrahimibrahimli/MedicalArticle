@@ -41,9 +41,22 @@ namespace Business.Concrete
             return new SuccessResult(UiMessages.SuccessAddedMessage(model.Content));
         }
 
+        public IResult Delete(int id)
+        {
+            var data = _commentDal.GetById(id);
+            data.Deleted = id;
+            _commentDal.Update(data);
+            return new SuccessResult(UiMessages.SuccessDeletedMessage(data.Content));
+        }
+
         public IDataResult<Comment> GetById(int id)
         {
             return new SuccessDataResult<Comment>(_commentDal.GetById(id));
+        }
+
+        public IDataResult<List<CommentDto>> GetCommentsByBlogId(int blogId)
+        {
+            return new SuccessDataResult<List<CommentDto>>(_commentDal.GetCommentsByBlogId(blogId));
         }
     }
 }

@@ -1,88 +1,88 @@
 ﻿@model BlogDetailsViewModel
 <!-- Start Breadcrumb 
-    ============================================= -->
-    @* <div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(~/assets/img/banner/8.jpg);"> *@
-    <div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(assets/img/banner/8.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1>@_localization.getKey("Blog").Value</h1>
-                </div>
-                <div class="col-md-6 text-right">
-                    </ul>
-                </div>
+============================================= -->
+<div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(assets/img/banner/8.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>@_localization.getKey("Blog").Value</h1>
+            </div>
+            <div class="col-md-6 text-right">
+                </ul>
             </div>
         </div>
     </div>
-    <!-- End Breadcrumb -->
+</div>
+<!-- End Breadcrumb -->
 
-    <!-- Start Blog
-    ============================================= -->
-    <div class="blog-area single full-blog left-sidebar default-padding">
-        <div class="container">
-            <div class="row">
-                <div class="blog-items">
-                    <div class="blog-content col-md-8">
-                        
-                        <div class="item">
+<!-- Start Blog
+============================================= -->
+<div class="blog-area single full-blog left-sidebar default-padding">
+    <div class="container">
+        <div class="row">
+            <div class="blog-items">
+                <div class="blog-content col-md-8">
 
-                            <!-- Start Post Thumb -->
-                            <div class="thumb">
-                                <img src="@Model.Blog.PhotoUrl" alt="Thumb">
-                                <div class="post-type">
-                                    <i class="fas fa-images"></i>
-                                </div>
+                    <div class="item">
+
+                        <!-- Start Post Thumb -->
+                        <div class="thumb">
+                            <img src="@Model.Blog.PhotoUrl" alt="Thumb">
+                            <div class="post-type">
+                                <i class="fas fa-images"></i>
                             </div>
-                            <!-- Start Post Thumb -->
+                        </div>
+                        <!-- Start Post Thumb -->
 
-                            <div class="info">
-                                <div class="meta">
-                                    <ul>
+                        <div class="info">
+                            <div class="meta">
+                                <ul>
                                     <li><a href="#">@Model.Blog.TeamboardName @Model.Blog.TeamboardSurname</a></li>
                                     <li>@Model.Blog.CreatedDate.ToString("dd.MM.yyyy")</li>
-                                    </ul>
-                                </div>
+                                </ul>
+                            </div>
                             <h3>@Model.Blog.Title</h3>
-                                <p>
+                            <p>
                                 @Model.Blog.Text
-                                </p>
+                            </p>
 
-                                <!-- Start Comments Form -->
-                                <div class="comments-area">
-                                    <div class="comments-title">
-                                        <h4>
-                                            5 comments
-                                        </h4>
+                            <!-- Start Comments Form -->
+                            <div class="comments-area">
+                                <div class="comments-title">
+                                    <h4>
+                                        @Model.Comments.Count()
+                                    </h4>
+                                    @foreach(var comment in Model.Comments){
+
                                         <div class="comments-list">
                                             <div class="commen-item">
-                                                <div class="avatar">
-                                                    <img src="assets/img/team/1.jpg" alt="Author">
-                                                </div>
                                                 <div class="content">
-                                                    <h5>Jonathom Doe</h5>
+                                                    <h5>@comment.UserName @comment.UserSurname</h5>
                                                     <div class="comments-info">
-                                                        <p>July 15, 2018</p> <a href="#"><i class="fa fa-reply"></i>Reply</a>
+                                                        <p>@comment.CreatedDate.ToString("dd.MM.yyyy")</p> <a href="#"><i class="fa fa-reply"></i></a>
                                                     </div>
                                                     <p>
-                                                        Delivered ye sportsmen zealously arranging frankness estimable as. Nay any article enabled musical shyness yet sixteen yet blushes. Entire its the did figure wonder off. 
+                                                        @comment.Content
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class="commen-item reply">
-                                                <div class="avatar">
-                                                    <img src="assets/img/team/2.jpg" alt="Author">
-                                                </div>
-                                                <div class="content">
-                                                    <h5>Spark Lee</h5>
-                                                    <div class="comments-info">
-                                                        <p>July 15, 2018</p> <a href="#"><i class="fa fa-reply"></i>Reply</a>
+                                            @foreach (var reply in comment.Replies) 
+                                            {
+
+                                                <div class="commen-item reply">
+                                                    <div class="content">
+                                                        <h5>@reply.UserName @reply.UserSurname</h5>
+                                                        <div class="comments-info">
+                                                            <p>@reply.CreatedDate.ToString("dd.MM.yyyy")</p> <a href="#"><i class="fa fa-reply"></i></a>
+                                                        </div>
+                                                        <p>
+                                                            @reply.Content
+                                                        </p>
                                                     </div>
-                                                    <p>
-                                                        Delivered ye sportsmen zealously arranging frankness estimable as. Nay any article enabled musical shyness yet sixteen yet blushes. Entire its the did figure wonder off. 
-                                                    </p>
                                                 </div>
-                                            </div>
+                                            }
                                         </div>
+                                        }
                                     </div>
                                     <div class="comments-form">
                                         <div class="title">

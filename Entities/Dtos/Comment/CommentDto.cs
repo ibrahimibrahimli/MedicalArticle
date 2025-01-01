@@ -10,6 +10,7 @@ namespace Entities.Dtos
         public string UserSurname { get; set; }
         public required string Content { get; set; }
         public List<Comment> Replies { get; set; } = [];
+        public DateTime CreatedDate { get; set; }
 
         public static Comment ToComment(CommentDto commentUpdateDto)
         {
@@ -20,7 +21,8 @@ namespace Entities.Dtos
                 UserName = commentUpdateDto.UserName,
                 UserSurname = commentUpdateDto.UserSurname,
                 Content = commentUpdateDto.Content,
-                Replies = commentUpdateDto.Replies
+                Replies = commentUpdateDto.Replies,
+                CreatedDate = commentUpdateDto.CreatedDate
             };
         }
     }
