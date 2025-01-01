@@ -4,12 +4,22 @@
     <p style="font-size: small; color: gray;">@Model.CreatedDate.ToString("dd-MM-yyyy HH:mm")</p>
 
     <!-- Yanıt Yazma Forması -->
-    <form method="post" asp-controller="Blog" asp-action="AddComment" style="margin-top: 10px;">
-        <textarea name="content" placeholder="Yanıt yazın..." required></textarea>
-        <input type="hidden" name="parentCommentId" value="@Model.Id" />
-        <input type="hidden" name="blogId" value="@Model.BlogId" />
-        <button type="submit">Yanıt Gönder</button>
-    </form>
+    <div>
+        <p>@Model.Content</p>
+        <button onclick="toggleReplyForm(@Model.Id)"><i class="fa fa-reply"></i></button>
+
+        <!-- Gizli form -->
+        <div id="reply-form-@Model.Id" style="display: none; margin-top: 10px;">
+            <form method="post" asp-controller="Blog" asp-action="AddComment">
+                <input type="text" asp-for="UserName"  placeholder="Adınız"  />
+                <input type="text" asp-for="UserSurname" placeholder="Soyadınız" />
+                <textarea style="width: 100%;" name="content" placeholder="Yanıt yazın..." required></textarea>
+                <input type="hidden" name="parentCommentId" value="@Model.Id" />
+                <input type="hidden" name="blogId" value="@Model.BlogId" />
+                <button type="submit"><i class="fa-regular fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
 
     <!-- Yanıtları Göstər -->
     @if (Model.Replies != null && Model.Replies.Any())
@@ -20,3 +30,16 @@
         }
     }
 </div>
+<script>
+    function toggleReplyForm(commentId) {
+        // Form elementini tapırıq
+        var form = document.getElementById('reply-form-' + commentId);
+
+        // Formun görünməsini dəyişdiririk
+        if (form.style.display === 'none') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    }
+</script>

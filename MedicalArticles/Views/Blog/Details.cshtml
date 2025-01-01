@@ -62,37 +62,6 @@
                                     {
                                         <p>Hələ rəy yoxdur. İlk rəy yazan siz olun!</p>
                                     }
-                                    @* @foreach(var comment in Model.Comments){
-
-                                        <div class="comments-list">
-                                            <div class="commen-item">
-                                                <div class="content">
-                                                    <h5>@comment.UserName @comment.UserSurname</h5>
-                                                    <div class="comments-info">
-                                                        <p>@comment.CreatedDate.ToString("dd.MM.yyyy")</p> <a href="#"><i class="fa fa-reply"></i></a>
-                                                    </div>
-                                                    <p>
-                                                        @comment.Content
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            @foreach (var reply in comment.Replies) 
-                                            {
-
-                                                <div class="commen-item reply">
-                                                    <div class="content">
-                                                        <h5>@reply.UserName @reply.UserSurname</h5>
-                                                        <div class="comments-info">
-                                                            <p>@reply.CreatedDate.ToString("dd.MM.yyyy")</p> <a href="#"><i class="fa fa-reply"></i></a>
-                                                        </div>
-                                                        <p>
-                                                            @reply.Content
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            }
-                                        </div>
-                                        } *@
                                 </div>
                                 <div class="comments-form">
                                     <div class="title">
