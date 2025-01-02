@@ -9,5 +9,6 @@ namespace MedicalArticles.ViewModels
         public List<Sosial> Sosials { get; set; }
         public List<BlogDto> Blogs { get; set; }
         public List<Comment> Comments { get; set; }
+        public CommentCreateDto Comment { get; set; }
     }
 }

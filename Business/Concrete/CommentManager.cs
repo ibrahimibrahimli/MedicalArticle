@@ -21,9 +21,8 @@ namespace Business.Concrete
             _validator = validator;
         }
 
-        public IResult Add(CommentCreateDto dto)
+        public async Task<IDataResult<Comment>> Add(Comment model)
         {
-            Comment model = CommentCreateDto.ToComment(dto);
             var validator = _validator.Validate(model);
 
             string errorMessage = "";
@@ -34,11 +33,11 @@ namespace Business.Concrete
             }
             if (!validator.IsValid)
             {
-                return new ErrorResult(errorMessage);
+                return new ErrorDataResult<Comment>(model);
             }
             _commentDal.Add(model);
 
-            return new SuccessResult(UiMessages.SuccessAddedMessage(model.Content));
+            return new SuccessDataResult<Comment>(model);
         }
 
         public IResult Delete(int id)

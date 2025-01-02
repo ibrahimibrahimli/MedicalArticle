@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Dtos;
+using Entities.TableModels;
 using MedicalArticles.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -55,15 +56,15 @@ namespace MedicalArticles.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddComment(CommentCreateDto dto)
+        public async Task<IActionResult> AddComment([FromBody] Comment comment)
         {
-            var result = _commentService.Add(dto);
-            if (!result.IsSuccess)
-            {
-                ModelState.AddModelError("", result.Message);
-                return View(dto);
-            }
-            return RedirectToAction("Details");
+            
+                // Yorum kaydetme işlemi
+                var newComment = await _commentService.Add(comment);
+
+                // Yeni yorumun partial view olarak dönülmesi
+                return PartialView("_CommentPartial", newComment.Data);
         }
+
     }
 }

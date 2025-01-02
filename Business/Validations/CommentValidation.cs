@@ -28,9 +28,7 @@ namespace Business.Validations
                 .MinimumLength(3)
                 .WithMessage(UiMessages.MINIMUM_3_SYMBOL_MESSAGE)
                 .MaximumLength(2000)
-                .WithMessage(UiMessages.MAXIMUM_2000_SYMBOL_MESSAGE)
-                .EmailAddress()
-                .WithMessage(UiMessages.NOT_VALID_EMAIL);
+                .WithMessage(UiMessages.MAXIMUM_2000_SYMBOL_MESSAGE);
         }
     }
 }

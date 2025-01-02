@@ -5,41 +5,76 @@
 
     <!-- Yanıt Yazma Forması -->
     <div>
-        <p>@Model.Content</p>
         <button onclick="toggleReplyForm(@Model.Id)"><i class="fa fa-reply"></i></button>
 
         <!-- Gizli form -->
         <div id="reply-form-@Model.Id" style="display: none; margin-top: 10px;">
-            <form method="post" asp-controller="Blog" asp-action="AddComment">
-                <input type="text" asp-for="UserName"  placeholder="Adınız"  />
-                <input type="text" asp-for="UserSurname" placeholder="Soyadınız" />
-                <textarea style="width: 100%;" name="content" placeholder="Yanıt yazın..." required></textarea>
-                <input type="hidden" name="parentCommentId" value="@Model.Id" />
-                <input type="hidden" name="blogId" value="@Model.BlogId" />
+            <form id="reply-form-@Model.Id" onsubmit="submitReply(event, @Model.Id)">
+                <input type="text" id="userName-@Model.Id" placeholder="Adınız" required />
+                <input type="text" id="userSurname-@Model.Id" placeholder="Soyadınız" required />
+                <textarea id="content-@Model.Id" style="width: 100%;" placeholder="Yanıt yazın..." required></textarea>
+                <input type="hidden" id="parentCommentId-@Model.Id" value="@Model.Id" />
+                <input type="hidden" id="blogId-@Model.Id" value="@Model.BlogId" />
                 <button type="submit"><i class="fa-regular fa-arrow-right"></i></button>
             </form>
         </div>
     </div>
 
     <!-- Yanıtları Göstər -->
-    @if (Model.Replies != null && Model.Replies.Any())
-    {
-        @foreach (var reply in Model.Replies)
+    <div id="replies-@Model.Id">
+        @if (Model.Replies != null && Model.Replies.Any())
         {
-            @Html.Partial("_CommentPartial", reply)
+            @foreach (var reply in Model.Replies)
+            {
+                @Html.Partial("_CommentPartial", reply)
+            }
         }
-    }
+    </div>
 </div>
 <script>
     function toggleReplyForm(commentId) {
-        // Form elementini tapırıq
         var form = document.getElementById('reply-form-' + commentId);
+        form.style.display = 'block';
+    }
 
-        // Formun görünməsini dəyişdiririk
-        if (form.style.display === 'none') {
-            form.style.display = 'block';
-        } else {
-            form.style.display = 'none';
+    async function submitReply(event, commentId) {
+        event.preventDefault();
+
+        const userName = document.getElementById(`userName-${commentId}`).value;
+        const userSurname = document.getElementById(`userSurname-${commentId}`).value;
+        const content = document.getElementById(`content-${commentId}`).value;
+        const parentCommentId = document.getElementById(`parentCommentId-${commentId}`).value;
+        const blogId = document.getElementById(`blogId-${commentId}`).value;
+
+        const data = {
+            UserName: userName,
+            UserSurname: userSurname,
+            Content: content,
+            ParentCommentId: parentCommentId,
+            BlogId: blogId
+        };
+
+        try {
+            const response = await fetch('/Blog/AddComment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                const result = await response.text(); // Partial view'i geri döndürdüğünü varsayıyoruz.
+                const repliesDiv = document.getElementById(`replies-${commentId}`);
+                repliesDiv.innerHTML += result.text; // Yeni yorumu ekliyoruz.
+                document.getElementById(`reply-form-${commentId}`).reset();
+                toggleReplyForm(commentId); // Formu gizle
+
+        form.style.display = 'none';
+            } else {
+            }
+        } catch (error) {
+            console.error('Hata:', error);
         }
     }
 </script>

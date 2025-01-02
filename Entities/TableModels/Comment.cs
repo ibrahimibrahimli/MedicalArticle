@@ -12,8 +12,8 @@ namespace Entities.TableModels
         public List<Comment> Replies { get; set; } = [];
 
         // Navigation properties
-        public Blog Blog { get; set; }
-        public Comment ParentComment { get; set; }
+        public virtual Blog Blog { get; set; }
+        public virtual Comment ParentComment { get; set; }
     }
 
 }

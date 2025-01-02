@@ -8,7 +8,7 @@ namespace Business.Abstract
     {
         
         IDataResult<List<Comment>> GetCommentsByBlogId(int blogId);
-        IResult Add(CommentCreateDto dto);
+        Task<IDataResult<Comment>> Add(Comment model);
         IResult Delete(int id);
         IDataResult<Comment> GetById(int id);
     }

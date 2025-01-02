@@ -67,30 +67,30 @@
                                     <div class="title">
                                         <h4>Leave a comments</h4>
                                     </div>
-                                    <form asp-action="AddComment" class="contact-comments">
+                                    <form asp-controller="Blog" asp-action="AddComment" class="contact-comments">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <!-- Name -->
-                                                    <input name="name" class="form-control" placeholder="Name *" type="text">
+                                                    <input asp-for="Comment.UserSurname" class="form-control" placeholder="Name *" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <!-- Email -->
-                                                    <input name="email" class="form-control" placeholder="Email *" type="email">
+                                                    <input asp-for="Comment.UserName" class="form-control" placeholder="Surname *" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group comments">
                                                     <!-- Comment -->
-                                                    <textarea class="form-control" placeholder="Comment"></textarea>
+                                                    <textarea asp-for="Comment.Content" class="form-control" placeholder="Comment"></textarea>
                                                 </div>
                                                 <div class="form-group full-width submit">
                                                     <button type="submit">
                                                         Post Comments
                                                     </button>
-                                                    <input type="hidden" name="blogId" value="@Model.Blog.Id" />
+                                                    <input type="hidden" asp-for="Comment.BlogId" value="Blog.Id" />
                                                 </div>
                                             </div>
                                         </div>
