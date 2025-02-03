@@ -9,28 +9,6 @@ namespace Business.BaseMessages
     public class UiMessages
     {
         public static string NOT_FIND_DATA = "Məlumat tapılmadı";
-        public static string SuccessAddedMessage(string propName)
-        {
-            return $"{propName} uğurla əlavə olundu";
-        }
-        public static string SuccessUpdatedMessage(string propName)
-        {
-            return $"{propName} uğurla yeniləndi";
-        }
-        public static string SuccessDeletedMessage(string propName)
-        {
-            return $"{propName} uğurla sistemdən silindi";
-        }
-        public static string SuccessCopyTrashMessage(string propName)
-        {
-            return $"{propName} zibil qutusuna köçürüldü";
-        }
-
-        public static string SuccessReturnTrashMessage(string propName)
-        {
-            return $"{propName} zibil qutusundan çıxarıldı";
-        }
-
 
         public const string MINIMUM_100_SYMBOL_MESSAGE = "100 simvoldan az daxil edilə bilməz";
         public const string MINIMUM_3_SYMBOL_MESSAGE = "3 simvoldan az daxil edilə bilməz";
@@ -59,5 +37,28 @@ namespace Business.BaseMessages
         public const string PASSWORD_NOT_CONTAIN_LOWERCASE = "Şifrəniz böyük hərflər ehtiva etmir";
         public const string PASSWORD_NOT_CONTAIN_NUMBER = "Şifrəniz rəqəm ehtiva etmir";
         public const string PASSWORD_NOT_CONTAIN_SYMBOL = "Şifrəniz ən az birini ehtiva etməlidir (!.@.#)";
+        public static string SuccessAddedMessage(string propName)
+        {
+            return $"{propName} uğurla əlavə olundu";
+        }
+        public static string SuccessUpdatedMessage(string propName)
+        {
+            return $"{propName} uğurla yeniləndi";
+        }
+        public static string SuccessDeletedMessage(string propName)
+        {
+            return $"{propName} uğurla sistemdən silindi";
+        }
+        public static string SuccessCopyTrashMessage(string propName)
+        {
+            return $"{propName} zibil qutusuna köçürüldü";
+        }
+
+        public static string SuccessReturnTrashMessage(string propName)
+        {
+            return $"{propName} zibil qutusundan çıxarıldı";
+        }
+
+
     }
 }
